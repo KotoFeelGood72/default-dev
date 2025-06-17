@@ -1,11 +1,13 @@
 //------------------------------------------------------------base styles
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
 	--full-screen: calc(var(--vh, 1vh) * 100);
 }
 
 html {
 	height: 100%;
-	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	font: 400 calc(100vw / 1920 * 10) / 1.33 $font_1;
 	// scroll-behavior: smooth;
 	// user-select: none;
 	@include bp($point_2) {
@@ -16,6 +18,7 @@ html {
 body {
 	position: relative;
 	display: flex;
+	background-color: #e7edf4;
 
 	height: 100%;
 	font-size: $font_size_base;
@@ -58,27 +61,68 @@ body {
 a {
 	text-decoration: none;
 	color: $color_link_base;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 
 	&:hover,
 	&:focus {
 		text-decoration: none;
 	}
-
 }
 
-
-// Animation 
+// Animation
 
 @keyframes loopIcons {
 	0% {
 		transform: rotate();
-	} 
+	}
 	100% {
 		transform: rotate(25deg);
 	}
 }
 
-
+.section_in {
+	max-width: $page_width;
+	margin: 0 auto;
+}
 
 //------------------------------------------------------------base styles###
+
+.btn {
+	padding: 2rem 3rem;
+	font-size: 1.8rem;
+	border-radius: 1.5rem;
+	@include flex-center;
+	cursor: pointer;
+	line-height: 2rem;
+	min-height: 6.4rem;
+	transition: all 0.2s ease-in-out;
+
+	&.primary {
+		border: 0.2rem solid $blue;
+		background-color: $blue;
+		color: $white;
+
+		&.white {
+			background-color: $white;
+			color: $black;
+		}
+		&:hover {
+			background-color: transparent;
+			color: $black;
+			&.white {
+			}
+		}
+	}
+	&.secondary {
+		border: 0.2rem solid $blue;
+		color: $blue;
+		&.white {
+			border-color: $white;
+			color: $white;
+		}
+		&:hover {
+			background-color: transparent;
+			color: $black;
+		}
+	}
+}

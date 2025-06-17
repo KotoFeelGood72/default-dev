@@ -5,65 +5,65 @@ img {
 	display: block;
 }
 
-h1 {
-	font-size: 4.8rem;
-	font-family: $font_3;
-	color: $dark;
-	line-height: 5.6rem;
-	@include bp($point_2) {
-		font-size: 3.2rem;
-		line-height: 4.6rem;
-	}
+// h1 {
+// 	font-size: 4.8rem;
+// 	font-family: $font_1;
+// 	color: $dark;
+// 	line-height: 5.6rem;
+// 	@include bp($point_2) {
+// 		font-size: 3.2rem;
+// 		line-height: 4.6rem;
+// 	}
 
-	span.pink {
-		color: $pink;
-	}
-	span.blue {
-		color: $blue;
-	}
-}
-// End
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-size: 4.8rem;
-	font-family: $font_2;
-	font-weight: 500;
-	color: $blue;
-	line-height: 5.6rem;
-	@include bp($point_2) {
-		font-size: 2.6rem;
-		line-height: 3rem;
-	}
-	span.pink {
-		color: $pink;
-	}
-	span.blue {
-		color: $blue;
-	}
-}
+// 	span.pink {
+// 		color: $pink;
+// 	}
+// 	span.blue {
+// 		color: $blue;
+// 	}
+// }
+// // End
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+// 	font-size: 4.8rem;
+// 	font-family: $font_1;
+// 	font-weight: 500;
+// 	color: $blue;
+// 	line-height: 5.6rem;
+// 	@include bp($point_2) {
+// 		font-size: 2.6rem;
+// 		line-height: 3rem;
+// 	}
+// 	span.pink {
+// 		color: $pink;
+// 	}
+// 	span.blue {
+// 		color: $blue;
+// 	}
+// }
 
-button {
-	cursor: pointer;
-}
+// button {
+// 	cursor: pointer;
+// }
 
-.global_txt {
-	p,
-	ul,
-	span {
-		&:not(:last-child) {
-			margin-bottom: 2rem;
-		}
-	}
+// .global_txt {
+// 	p,
+// 	ul,
+// 	span {
+// 		&:not(:last-child) {
+// 			margin-bottom: 2rem;
+// 		}
+// 	}
 
-	li {
-		&:not(:last-child) {
-			margin-bottom: 1rem;
-		}
-	}
-}
+// 	li {
+// 		&:not(:last-child) {
+// 			margin-bottom: 1rem;
+// 		}
+// 	}
+// }
 
 .wave {
 	background: rgba(255, 255, 255, 0.4);

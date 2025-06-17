@@ -1,4 +1,3 @@
-
 .policy_main {
 	padding: 3rem 0;
 	line-height: 2.8rem;
@@ -18,22 +17,22 @@
 		}
 	}
 }
-.policy_list>li {
+.policy_list > li {
 	margin-bottom: 5rem;
 	@include bp($point_2) {
 		margin-bottom: 3rem;
 	}
 }
 .policy_list {
-	li>p {
+	li > p {
 		font-size: 2.2rem;
-		font-family: $font_3;
+		font-family: $font_1;
 		margin-bottom: 2rem;
 		@include bp($point_2) {
 			font-size: 1.8rem;
 		}
 	}
-	li>span {
+	li > span {
 		margin-bottom: 2rem;
 		display: flex;
 	}
@@ -60,21 +59,20 @@
 		padding-left: 1rem;
 	}
 }
-.sub_items>p {
+.sub_items > p {
 	margin-bottom: 2rem;
 	font-size: 1.8rem;
-	font-family: $font_3;
+	font-family: $font_1;
 }
 .end_subtitle {
-	font-size: 1.6rem!important;
-	font-family: $font_2!important;
-
+	font-size: 1.6rem !important;
+	font-family: $font_1 !important;
 }
 .mod_end {
 	p {
 		@include bp($point_2) {
-			font-size: 1.4rem!important;
-			font-family: $font_1!important;
+			font-size: 1.4rem !important;
+			font-family: $font_1 !important;
 			line-height: 2.6rem;
 		}
 	}

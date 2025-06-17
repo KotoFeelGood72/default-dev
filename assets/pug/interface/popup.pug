@@ -1,0 +1,31 @@
+.popup.popup_form 
+	.popup_bg.close
+	.close_btn
+		+iconify({icon: 'iconamoon:close-thin'})
+	.popup_main.popup_form__main 
+		.popup_form__img 
+			img(src="")
+		.popup_form__action
+			.popup_form__action__head 
+				h3 Остались вопросы?
+				p Оставьте заявку и мы свяжемся с вами в течение 5 минут
+			.popup_form__action__form 
+				+input({place: 'Ваш телефон'})
+				+input({place: 'ФИО'})
+				.popup_form__checkbox 
+					input(type="checkbox" id="popup_agreement")
+					label(for="popup_agreement")
+						p Я даю согласие на обработку персональных данных
+				.btn.popup_form__btn Оставить заявку
+
+.popup.popup_info
+	.popup_bg.close
+	.close_btn
+		+iconify({icon: 'iconamoon:close-thin'})
+	.popup_main.popup_main__info 
+		h3 Перезалог автомобиля под ПТС: выгодное решение финансовых вопросов
+		ul.popup_info__list 
+			li 
+				p Что такое перезалог автомобиля под ПТС?
+				span Перезалог автомобиля под ПТС – это процесс получения деньгиа, используя свой автомобиль в качестве залога. Это удобный способ получить деньги, не продавая свое средство передвижения
+		.popup_btn.btn Оставить заявку

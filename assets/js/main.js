@@ -1,6 +1,3 @@
-
-
-
 let $body,
 	windowHeight,
 	windowWidth,
@@ -10,11 +7,11 @@ let $body,
 	mediaPoint3 = 480,
 	mediaPoint4 = 320,
 	devStatus = window.productionStatus === 'development';
-	const win = document.body
+const win = document.body
 
 $(document).ready(function ($) {
 	$body = $('body');
-	
+
 });
 
 $(window).on('load', function () {
@@ -23,7 +20,7 @@ $(window).on('load', function () {
 	// allDefautAnim();
 	// burgerMobile();
 	scrollNav();
-	if(windowWidth > mediaPoint1) {
+	if (windowWidth > mediaPoint1) {
 		popup('14px', '.send_form', '.popup_send');
 		popup('14px', '.call_form', '.popup_call');
 	} else {
@@ -74,9 +71,9 @@ if ('objectFit' in document.documentElement.style === false) {
 					'url("' +
 					image.src +
 					'") no-repeat 50%/' +
-					(image.currentStyle
-						? image.currentStyle['object-fit']
-						: image.getAttribute('data-object-fit'));
+					(image.currentStyle ?
+						image.currentStyle['object-fit'] :
+						image.getAttribute('data-object-fit'));
 
 				image.src =
 					"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='" +
@@ -91,16 +88,16 @@ if ('objectFit' in document.documentElement.style === false) {
 
 function succes(success) {
 	$(success).toggleClass('active');
-		setTimeout(function() {
-			$(success).removeClass('active')
-		}, 3000)
+	setTimeout(function () {
+		$(success).removeClass('active')
+	}, 3000)
 }
 
 function close(closes) {
 	$(closes).toggleClass('active');
-		setTimeout(function() {
-			$(closes).removeClass('active')
-		}, 3000)
+	setTimeout(function () {
+		$(closes).removeClass('active')
+	}, 3000)
 }
 
 function getRandomInt(min, max) {
@@ -144,25 +141,25 @@ console.info('%c%s', styles, message);
 // 	}
 // });
 
-$(document).ready(function() {
+$(document).ready(function () {
 	const btns = document.querySelectorAll('.btn')
 
 	btns.forEach(el => {
-			el.addEventListener('click', function(e) {
-					let
-							size = Math.max(this.offsetWidth, this.offsetHeight),
-							x = e.offsetX - size / 2,
-							y = e.offsetY - size / 2,
-							wave = this.querySelector('.wave')
-	
-					// Create an element if it doesn't exist
-					if (!wave) {
-							wave = document.createElement('span')
-							wave.className = 'wave'
-					}
-					wave.style.cssText = `width:${size}px;height:${size}px;top:${y}px;left:${x}px`
-					this.appendChild(wave)
-			})
+		el.addEventListener('click', function (e) {
+			let
+				size = Math.max(this.offsetWidth, this.offsetHeight),
+				x = e.offsetX - size / 2,
+				y = e.offsetY - size / 2,
+				wave = this.querySelector('.wave')
+
+			// Create an element if it doesn't exist
+			if (!wave) {
+				wave = document.createElement('span')
+				wave.className = 'wave'
+			}
+			wave.style.cssText = `width:${size}px;height:${size}px;top:${y}px;left:${x}px`
+			this.appendChild(wave)
+		})
 	})
 })
 
@@ -208,7 +205,7 @@ Array.from(btnSubmit).map((item) => {
 // 	let popupFormsClose = document.querySelectorAll('.popupFormsClose')
 // 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
 // 	const burgerPopup = document.querySelector('.burger')
-	
+
 // 	Array.from(popupFormsTrigger).map((item) => {
 // 		item.addEventListener('click', () => {
 // 			popupForms.classList.add('active');
@@ -238,7 +235,7 @@ Array.from(btnSubmit).map((item) => {
 // 	const triggerBurger = document.querySelector('.burger_trigger')
 // 	const burgerPopup = document.querySelector('.burger')
 // 	const burgerFail = document.querySelectorAll('.burger_closer')
-	
+
 // 	triggerBurger.addEventListener('click', () => {
 // 		burgerPopup.classList.add('active')
 // 		win.style.overflow = "";
@@ -268,7 +265,7 @@ Array.from(btnSubmit).map((item) => {
 // 			$field.removeClass("filled");
 // 		}
 // 	});
-	
+
 // 	$(".forms_action input").on("focus", function() {
 // 		var $field = $(this).closest("li");
 // 		if (this) {
@@ -284,7 +281,7 @@ Array.from(btnSubmit).map((item) => {
 // 	let accordionTitle = $(title),
 // 		accordionContent = $(content);
 // 	$(accordionContent).not(":nth-child(1)")
-	
+
 // 	$(accordionTitle).on('click', function () {
 // 		let $this = $(this);
 // 		$this.parent().toggleClass('active_mod').siblings().removeClass('active_mod');
@@ -311,7 +308,7 @@ function popup(style, btn, popups) {
 		item.addEventListener('click', () => {
 			pop.classList.add('active')
 			win.style.overflow = "hidden";
-			win.style.paddingRight = style; 
+			win.style.paddingRight = style;
 		})
 	});
 
@@ -319,7 +316,7 @@ function popup(style, btn, popups) {
 		item.addEventListener('click', () => {
 			pop.classList.remove('active')
 			win.style.overflow = "";
-			win.style.paddingRight = ""; 
+			win.style.paddingRight = "";
 		})
 	});
 
@@ -327,7 +324,7 @@ function popup(style, btn, popups) {
 
 
 }
-$(document).ready(function()  {
+$(document).ready(function () {
 
 	var inputsTel = document.querySelectorAll('input[type="tel"]');
 	Inputmask({
@@ -339,24 +336,24 @@ $(document).ready(function()  {
 // https://twitter.com/uixmat
 
 function scrollNav() {
-  $('.smooth_scroll').click(function(){
-    $(".active").removeClass("active");     
-    $(this).addClass("active");
-    
-    $('html, body').stop().animate({
-      scrollTop: $($(this).attr('href')).offset().top - 160
-    }, 600);
-    return false;
-  });
+	$('.smooth_scroll').click(function () {
+		$(".active").removeClass("active");
+		$(this).addClass("active");
+
+		$('html, body').stop().animate({
+			scrollTop: $($(this).attr('href')).offset().top - 160
+		}, 600);
+		return false;
+	});
 }
 
 $(window).on("scroll", function () {
 	var scrolled = $(this).scrollTop();
-	if( scrolled > 50 ) {
-			$('.header').addClass('fixed');
-	}   
-	if( scrolled <= 50 ) {     
-			$('.header').removeClass('fixed');
+	if (scrolled > 50) {
+		$('.header').addClass('fixed');
+	}
+	if (scrolled <= 50) {
+		$('.header').removeClass('fixed');
 	}
 });
 
@@ -370,7 +367,7 @@ function burgerMobile() {
 	const burgerRemove = document.querySelectorAll('header_nav_list li')
 
 	burgerRemove.forEach(item => {
-		item.addEventListener('click', function() {
+		item.addEventListener('click', function () {
 			burgerTrigger.classList.remove('active')
 			burger.classList.remove('active')
 			header.classList.remove('active')
@@ -402,28 +399,79 @@ function burgerMobile() {
 
 
 
+const heroSlider = new Swiper('.hero_slider', {
+	allowTouchMove: true,
+	loop: true,
+	grabCursor: true,
+	a11y: true,
+	slidesPerView: 1,
+	spaceBetween: 30,
+	keyboard: {
+		enabled: true,
+		onlyInViewport: false,
+	},
+	pagination: {
+		el: '.swiper-pagination',
+	}
+});
 
 
+document.addEventListener('DOMContentLoaded', () => {
+	const hidden = document.getElementById('loanRange'); // display:none
+	const slider = document.querySelector('.calculator__slider');
+	const track = slider.querySelector('.slider__track');
+	const fill = slider.querySelector('.slider__progress');
+	const out = document.getElementById('loanValue');
+
+	const min = +hidden.min;
+	const max = +hidden.max;
+	const step = +hidden.step || 1;
+
+	// формат «400 000 ₽»
+	const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+
+	/* ----- helpers ----- */
+	const valueToPercent = v => ((v - min) * 100) / (max - min);
+	const percentToValue = p => Math.round((min + p * (max - min) / 100) / step) * step;
+	const R = 12;
+
+	function render(val) {
+		const pct = valueToPercent(val); // процент по треку
+
+		/* 1. ширина полосы = pct + половина кружка */
+		// fill.style.width = `calc(${pct}%)`;
+		fill.style.width = `calc(${pct}% - ${R}px)`;
+
+		/* 3. подпись суммы */
+		out.textContent = fmt(val);
+
+		/* 4.	value отправляем в скрытый input	*/
+		hidden.value = val;
+	}
 
 
+	/* стартовая отрисовка */
+	render(+hidden.value || +slider.dataset.initial || min);
 
+	/* ------- drag & click -------- */
+	let dragging = false;
 
+	function move(e) {
+		const rect = track.getBoundingClientRect();
+		let pct = ((e.clientX - rect.left) / rect.width) * 100;
+		pct = Math.max(0, Math.min(100, pct)); // clamp
+		render(percentToValue(pct));
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	slider.addEventListener('pointerdown', e => {
+		dragging = true;
+		move(e);
+		document.addEventListener('pointermove', move);
+		document.addEventListener('pointerup', () => {
+			dragging = false;
+			document.removeEventListener('pointermove', move);
+		}, {
+			once: true
+		});
+	});
+});

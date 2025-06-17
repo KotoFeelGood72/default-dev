@@ -1,0 +1,15 @@
+header.header 
+	.section_in 
+		.header_main 
+			.header_logo 
+				a(href="#")
+					img(src="/i/logo.png", alt="") 
+			nav.header_nav
+				each item in ['Главная', 'Калькулятор', 'Процесс работы', 'FAQ', 'О нас', 'Новости', 'Контакты'] 
+					a(href="#")=item
+			.header_phone 
+				a(href="#")
+					.header_phone__icon 
+						img(src="/i/phone.svg")
+					p 8 495 128-78-94
+			.btn.header_btn.primary Оставить заявку

@@ -18,4 +18,45 @@ mixin customSelect(data)
 		ul.custom-select-dropdown
 			each option in data.options
 				li.custom-select-option(data-value=option)!= option
-				
+
+mixin news
+	.newsCard 
+		.newsCard__cat
+			a(href="#") Новости компании
+		h3 «OK Залог» запускает новые условия по займам под ПТС: быстрые деньги без потери автомобиля
+		.newsCard_bottom 
+			.newsCard__date!='<span>23</span> мая 2025'
+			.newsCard__link 
+				a(href="#")
+					+iconify({icon: 'prime:arrow-right'})
+
+
+
+
+
+
+//- _mixins/pageHead.pug
+//- ----------------------------------------------
+//- color  – 'white' | 'black'
+//- crumbs – массив крошек (строки или {href, text})
+mixin pageHead(color = 'white', crumbs = [])
+	-                         // ← открытие JS-блока
+		const txt  = color === 'black' ? 'u-text-black'      : 'u-text-white'
+		const brd  = color === 'black' ? 'breadcrumbs--black': 'breadcrumbs--white'
+		const back = color === 'black' ? 'page-head--light'  : 'page-head--blue'
+			// ← здесь JS-блок КОНЧИЛСЯ
+	section.page-head(class=back)   // ↓ дальше — обычная разметка Pug
+		.section_in
+			if crumbs.length
+				nav.breadcrumbs(class=brd)
+					ul
+						each crumb, i in crumbs
+							li
+								if i
+									span.dot &bull;
+								if typeof crumb === 'string'
+									span(class=txt)= crumb
+								else if crumb.href
+									a(class=txt, href=crumb.href)= crumb.text
+								else
+									span(class=txt)= crumb.text

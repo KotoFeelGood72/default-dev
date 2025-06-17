@@ -1,12 +1,65 @@
 .header {
-	// position: fixed;
+	// position: absolute;
 	top: 0;
 	left: 0;
 	height: $header;
 	width: 100%;
 	will-change: transform;
 	@include z-index(header);
+	padding: 2rem 0;
+}
 
-	// НЕ ЗАБЫТЬ УДАЛИТЬ
-	display: none;
+.header_main {
+	@include flex-space;
+	gap: 1.5rem;
+}
+
+.header_logo {
+	background-color: $white;
+	padding: 1.1rem 3.2rem;
+	border-radius: 1.5rem;
+}
+
+.header_nav {
+	background-color: $white;
+	border-radius: 1.5rem;
+	@include flex-start;
+	padding: 0 3rem;
+	gap: 2.6rem;
+	a {
+		@include flex-center;
+		padding: 2.3rem 0;
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			color: $blue;
+		}
+	}
+}
+
+.header_phone {
+	a {
+		@include flex-start;
+		background-color: $white;
+		border-radius: 1.5rem;
+	}
+
+	p {
+		padding: 2rem 2.6rem 2rem 1.6rem;
+		font-size: 1.8rem;
+		color: $blue;
+	}
+}
+
+.header_phone__icon {
+	width: 5.5rem;
+	height: 5.5rem;
+	@include flex-center;
+	background-color: $blue;
+	padding: 1.1rem;
+	border-radius: 1.2rem;
+	margin-left: 0.5rem;
+}
+
+.header_btn {
+	flex-grow: 1;
 }
