@@ -35,17 +35,12 @@ mixin news
 
 
 
-//- _mixins/pageHead.pug
-//- ----------------------------------------------
-//- color  – 'white' | 'black'
-//- crumbs – массив крошек (строки или {href, text})
 mixin pageHead(color = 'white', crumbs = [])
-	-                         // ← открытие JS-блока
+	-                         
 		const txt  = color === 'black' ? 'u-text-black'      : 'u-text-white'
 		const brd  = color === 'black' ? 'breadcrumbs--black': 'breadcrumbs--white'
 		const back = color === 'black' ? 'page-head--light'  : 'page-head--blue'
-			// ← здесь JS-блок КОНЧИЛСЯ
-	section.page-head(class=back)   // ↓ дальше — обычная разметка Pug
+	.page-head(class=back)
 		.section_in
 			if crumbs.length
 				nav.breadcrumbs(class=brd)

@@ -1,0 +1,25 @@
+.single__column {
+	background-color: $white;
+	padding: 4rem 3rem 2.4rem 3rem;
+	border-radius: 1.5rem;
+	margin-bottom: 10rem;
+}
+
+.singlehead__content {
+	h1 {
+		padding: 3rem 0;
+		font-size: 5.2rem;
+		max-width: 100.7rem;
+	}
+}
+
+.single_main {
+	max-width: 100.7rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+.single_main__w {
+	border-top: 0.1rem solid rgba(0, 0, 0, 0.3);
+	padding-top: 3rem;
+}

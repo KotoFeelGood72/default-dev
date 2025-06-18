@@ -153,3 +153,49 @@ h6 {
 .mb18 {
 	margin-bottom: 18rem;
 }
+
+.breadcrumbs {
+	ul {
+		@include flex-start;
+	}
+	span {
+		@include flex-center;
+		padding: 0 0.5rem;
+	}
+	li {
+		@include flex-start;
+	}
+
+	&--white {
+		color: $white;
+		a {
+			color: $white;
+		}
+	}
+}
+
+.head_main {
+	background-image: url("/i/news-bg.png");
+	background-size: cover;
+	background-position: center center;
+	padding: 4rem 4rem 9.2rem 3rem;
+	border-radius: 1.5rem;
+	margin-bottom: 6rem;
+}
+
+.head__content {
+	padding-top: 4rem;
+	h1 {
+		color: $white;
+		font-size: 4.2rem;
+		margin-bottom: 1.5rem;
+	}
+	p {
+		color: $white;
+		max-width: 65.1rem;
+	}
+}
+
+span.u-text-black {
+	opacity: 0.6;
+}

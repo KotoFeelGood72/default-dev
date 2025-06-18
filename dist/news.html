@@ -28,25 +28,20 @@
         <section class="head"> 
           <div class="section_in"> 
             <div class="head_main"> 
-              <const>txt  = color === 'black' ? 'u-text-black'      : 'u-text-white'</const>
-              <const>brd  = color === 'black' ? 'breadcrumbs--black': 'breadcrumbs--white'</const>
-              <const>back = color === 'black' ? 'page-head--light'  : 'page-head--blue'
-                <!-- ← здесь JS-блок КОНЧИЛСЯ-->
-              </const>
-              <section class="page-head">  // ↓ дальше — обычная разметка Pug
+              <div class="page-head page-head--blue">
                 <div class="section_in">
-                  <nav class="breadcrumbs">
+                  <nav class="breadcrumbs breadcrumbs--white">
                     <ul>
-                      <li><a href="/">Главная страница</a>
+                      <li><a class="u-text-white" href="/">Главная страница</a>
                       </li>
-                      <li><span class="dot">&bull;</span><a href="/news">Новости</a>
+                      <li><span class="dot">&bull;</span><a class="u-text-white" href="/news">Новости</a>
                       </li>
-                      <li><span class="dot">&bull;</span><span>Новости</span>
+                      <li><span class="dot">&bull;</span><span class="u-text-white">Новости</span>
                       </li>
                     </ul>
                   </nav>
                 </div>
-              </section>
+              </div>
               <div class="head__content"> 
                 <h1>Новости</h1>
                 <p>Следите за последними изменениями в сфере залоговых услуг: новые законы, рыночные тренды, полезные лайфхаки и обновления нашей компании.</p>
