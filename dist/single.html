@@ -65,7 +65,7 @@
         <div class="section_in"> 
           <div class="footer_main"> 
             <div class="footer_col__start"> 
-              <div class="footer_logo"> <img src="/i/logo.png"></div>
+              <div class="footer_logo"> <a href="#"><img src="/i/logo.png"></a></div>
               <div class="footer_col__info_gap">
                 <p>ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ ЧИНЯЕВ АЛЕКСЕЙ ЕВГЕНЬЕВИЧ, ИНН: 650502931989</p>
                 <p>ЮРИДИЧЕСКИЙ АДРЕС: 359120, РОССИЯ, КАЛМЫКИЯ РЕСП, КЕТЧЕНЕРОВСКИЙ Р-Н, П КЕТЧЕНЕРЫ, УЛ ПУШКИНА, Д 36 КВ 1</p>
@@ -73,13 +73,15 @@
             </div>
             <div class="footer_col__menu">
               <h6>Навигация</h6>
-              <nav> <a href="#">Навигация</a><a href="#">Калькулятор</a><a href="#">Процесс работы</a><a href="#">FAQ</a><a href="#">Новости</a><a href="#">Контакты</a>
+              <nav> <a href="#">Главная</a><a href="#">Калькулятор</a><a href="#">Процесс работы</a><a href="#">FAQ</a><a href="#">Новости</a><a href="#">Контакты</a>
               </nav>
             </div>
             <div class="footer_col__contacts"> 
               <ul class="footer_contacts__list"> 
-                <li> <a href="#">8 495 128-78-94 </a></li>
-                <li> <a href="#">doks@okzalog.ru</a></li>
+                <li> <a href="#">
+                    <h6>8 495 128-78-94 </h6></a></li>
+                <li> <a href="#">
+                    <h6>doks@okzalog.ru</h6></a></li>
               </ul>
               <ul class="footer_socials"> 
                 <li> <a href="#"><img src="/i/wa.png"></a></li>
@@ -91,7 +93,7 @@
           <div class="footer_bottom"> 
             <div class="footer_policy"> <a href="#">Политика конфиденциальности </a></div>
             <div class="footer_privacy"> <a href="#">Юридическая информация </a></div>
-            <div class="footer_policy"> <a href="#">Дизайнер <span>Плотницкий Юрий</span></a></div>
+            <div class="footer_policy"> <a href="#"><p>Дизайнер</p> <span>Плотницкий Юрий</span></a></div>
           </div>
         </div>
       </footer>
@@ -105,44 +107,66 @@
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
     <div class="popup popup_form"> 
-      <div class="popup_bg close"></div>
+      <div class="popup_bg remove"></div>
       <div class="close_btn">
-        <div class="gl__icon"> <span class="iconify" data-icon="iconamoon:close-thin" data-width="2.4rem" data-height="2.4rem"></span></div>
+        <div class="gl__icon"> <span class="iconify" data-icon="ci:close-lg" data-width="3rem" data-height="3rem"></span></div>
       </div>
       <div class="popup_main popup_form__main"> 
-        <div class="popup_form__img"> <img src=""></div>
+        <div class="popup_form__img"> <img src="/i/fform.jpg"></div>
         <div class="popup_form__action">
           <div class="popup_form__action__head"> 
             <h3>Остались вопросы?</h3>
             <p>Оставьте заявку и мы свяжемся с вами в течение 5 минут</p>
           </div>
-          <div class="popup_form__action__form"> 
-            <input class="global_input" type="text" value="" placeholder="Ваш телефон"/>
-            <input class="global_input" type="text" value="" placeholder="ФИО"/>
-            <div class="popup_form__checkbox"> 
-              <input type="checkbox" id="popup_agreement">
-              <label for="popup_agreement">
+          <div class="fform_form">
+            <div class="fform_form__col">
+              <input class="global_input" type="text" value="" placeholder="Ваш телефон"/>
+              <input class="global_input" type="text" value="" placeholder="ФИО"/>
+            </div>
+            <div class="calculator__forms__agreement"> 
+              <input type="checkbox" id="agreement-popup">
+              <label for="agreement-popup">
+                <div class="calculator__forms__agreement_icon"> 
+                  <div class="gl__icon"> <span class="iconify" data-icon="mingcute:check-line" data-width="2.4rem" data-height="2.4rem"></span></div>
+                </div>
                 <p>Я даю согласие на обработку персональных данных</p>
               </label>
             </div>
-            <div class="btn popup_form__btn">Оставить заявку</div>
+            <div class="btn fform_btn primary">Оставить заявку</div>
           </div>
         </div>
       </div>
     </div>
     <div class="popup popup_info">
-      <div class="popup_bg close"></div>
+      <div class="popup_bg remove"></div>
       <div class="close_btn">
-        <div class="gl__icon"> <span class="iconify" data-icon="iconamoon:close-thin" data-width="2.4rem" data-height="2.4rem"></span></div>
+        <div class="gl__icon"> <span class="iconify" data-icon="ci:close-lg" data-width="3rem" data-height="3rem"></span></div>
       </div>
-      <div class="popup_main popup_main__info"> 
-        <h3>Перезалог автомобиля под ПТС: выгодное решение финансовых вопросов</h3>
-        <ul class="popup_info__list"> 
-          <li> 
-            <p>Что такое перезалог автомобиля под ПТС?</p><span>Перезалог автомобиля под ПТС – это процесс получения деньгиа, используя свой автомобиль в качестве залога. Это удобный способ получить деньги, не продавая свое средство передвижения</span>
-          </li>
-        </ul>
-        <div class="popup_btn btn">Оставить заявку</div>
+      <div class="popup_scroll"> 
+        <div class="popup_main popup_main__info"> 
+          <h3>Перезалог автомобиля под ПТС: выгодное решение финансовых вопросов</h3>
+          <ul class="popup_info__list"> 
+            <li> 
+              <p>Что такое перезалог автомобиля под ПТС?</p><span>Перезалог автомобиля под ПТС – это процесс получения деньгиа, используя свой автомобиль в качестве залога. Это удобный способ получить деньги, не продавая свое средство передвижения</span>
+            </li>
+            <li> 
+              <p>Преимущества перезалога автомобиля</p><span>Одним из основных преимуществ перезалога автомобиля под ПТС является возможность быстро получить нужную сумму, не теряя при этом права на владение машиной. Кроме того, данный вид деньгиования часто доступен даже с плохой деньгиной историей.</span>
+            </li>
+            <li> 
+              <p>Рефинансирование автомобиля: выгодные условия для клиентов</p><span>Рефинансирование автомобиля – это возможность заменить текущий займ на более выгодные условия. Это позволяет снизить ежемесячные выплаты или срок деньгиа, что значительно облегчает финансовое бремя.</span>
+            </li>
+            <li> 
+              <p>Преимущества рефинансирования автомобиля</p><span>Одним из ключевых преимуществ рефинансирования автомобиля является возможность снижения процентной ставки по деньгиу, что приводит к экономии денег в долгосрочной перспективе. Также это позволяет улучшить свою деньгиную историю.</span>
+            </li>
+            <li> 
+              <p>Автоломбард под ПТС: надежное решение финансовых трудностей</p><span>Автоломбард под ПТС предоставляет возможность получить деньги, используя свой автомобиль в качестве залога. Это удобный и быстрый способ решить финансовые проблемы, не расставаясь со своим транспортным средством</span>
+            </li>
+            <li> 
+              <p>Преимущества автоломбарда под ПТС</p><span>Одним из главных преимуществ автоломбарда под ПТС является оперативность получения денег. Клиенты могут получить нужную сумму в течение короткого времени, минуя сложные процедуры и проверки, характерные для банковских учреждений.</span>
+            </li>
+          </ul>
+          <div class="popup_btn btn primary">Оставить заявку</div>
+        </div>
       </div>
     </div>
     <div class="succes">

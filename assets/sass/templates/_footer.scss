@@ -4,7 +4,94 @@
 	flex: 0 0 auto;
 	will-change: transform;
 	position: relative;
+	background-color: $blue;
+	color: $white;
+	a {
+		color: $white;
+	}
 	@include bp($point_2) {
 		min-height: 100%;
+	}
+}
+
+.footer_main {
+	@include flex-space;
+	align-items: flex-start;
+	padding: 5rem 0 3rem 0;
+}
+
+.footer_logo {
+	max-width: 20.5rem;
+	background-color: $white;
+	border-radius: 1.5rem;
+	padding: 1.3rem 4rem;
+	margin-bottom: 7rem;
+}
+
+.footer_col__start {
+	max-width: 35.5rem;
+}
+
+.footer_col__info_gap {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	opacity: 0.6;
+}
+
+.footer_col__menu {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	h6 {
+		font-size: 1.8rem;
+		opacity: 0.6;
+		font-weight: 500;
+	}
+
+	nav {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+.footer_socials {
+	@include flex-start;
+	gap: 1.5rem;
+}
+
+.footer_contacts__list {
+	margin-bottom: 9.7rem;
+}
+
+.footer_bottom {
+	@include flex-space;
+	padding: 1.5rem 0 3rem 0;
+	border-top: 0.2rem solid rgba(255, 255, 255, 0.589);
+	div {
+		font-weight: 500;
+		&:hover {
+			opacity: 1;
+		}
+		&:not(:last-child) {
+			opacity: 0.6;
+		}
+
+		&:last-child {
+			a {
+				@include flex-start;
+				gap: 0.6rem;
+			}
+			p {
+				opacity: 0.6;
+			}
+			span {
+				text-decoration: underline;
+			}
+		}
 	}
 }

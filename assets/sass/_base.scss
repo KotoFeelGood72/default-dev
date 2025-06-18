@@ -105,10 +105,13 @@ a {
 		&.white {
 			background-color: $white;
 			color: $black;
+			&.border-none {
+				border: none;
+			}
 		}
 		&:hover {
-			background-color: transparent;
-			color: $black;
+			// background-color: transparent;
+			// color: $black;
 			&.white {
 			}
 		}
@@ -125,4 +128,28 @@ a {
 			color: $black;
 		}
 	}
+}
+
+.global_input {
+	@include app;
+	background-color: #efefef;
+	padding: 2rem 2.5rem;
+	border-radius: 1.5rem;
+	font-size: 1.8rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 4.2rem;
+	font-weight: 700;
+}
+
+.mb22 {
+	margin-bottom: 22rem;
+}
+.mb18 {
+	margin-bottom: 18rem;
 }

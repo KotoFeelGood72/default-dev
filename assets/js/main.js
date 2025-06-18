@@ -475,3 +475,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
+
+$(document).ready(function () {
+	$('.faq_item__head').on('click', function () {
+		const $item = $(this).closest('.faq_item');
+		$('.faq_item').not($item).removeClass('active').find('.faq_item__content').slideUp();
+		$item.toggleClass('active');
+		$item.find('.faq_item__content').stop(true, true).slideToggle();
+	});
+});
