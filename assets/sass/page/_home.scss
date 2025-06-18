@@ -60,6 +60,25 @@
 			min-height: 25rem;
 			position: relative;
 
+			&:before {
+				position: absolute;
+				top: -2.5rem;
+				left: 50%;
+				transform: translateX(-50%);
+				background-image: url("../../i/polygon.png");
+				width: 4.7rem;
+				height: 4.7rem;
+				background-repeat: no-repeat;
+				opacity: 0;
+				transition: all 0.3s ease-in-out;
+				content: "";
+			}
+			&.active {
+				&:before {
+					opacity: 1;
+				}
+			}
+
 			h3 {
 				font-size: 2.4rem;
 			}
@@ -491,6 +510,11 @@
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+}
+
+.reviews_slide__img {
+	border-radius: 1.5rem;
+	overflow: hidden;
 }
 
 .reviews_slide_content__head {

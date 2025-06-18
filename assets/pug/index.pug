@@ -45,14 +45,6 @@ block vars
 				imgMobile: '/i/hero-slide-mobile-5.jpg',
 				btn: ['Рассчитать платёж', 'Подробнее']
 			},
-			{                                         
-				title: 'Займы для бизнеса',
-				text: 'Оборотные средства на развитие — решение за 60 минут под залог техники или товаров.',
-				imgDesktop: '/i/hero-slide-desktop-6.jpg',
-				imgTablet: '/i/hero-slide-tablet-6.jpg',
-				imgMobile: '/i/hero-slide-mobile-6.jpg',
-				btn: ['Получить консультацию', 'Подробнее']
-			}
 		];
 
 block content_block
@@ -84,23 +76,27 @@ block content_block
 						{
 							title: 'Займы под залог ПТС',
 							txt: 'Получите деньги, используя свой автомобиль в качестве залога',
+							slideIndex: 0,
 						},
 						{
 							title: 'Займы под залог недвижимости',
 							txt: 'Крупные суммы займов и выгодные процентные ставки',
+							slideIndex: 1,
 						},
 						{
 							title: 'Потребительские кредиты',
 							txt: 'На любые цели — с выгодными ставками и мгновенным одобрением!',
+							slideIndex: 2,
 						},
 						{
 							title: 'Автокредит до 1 млн ₽',
 							txt: 'Получите деньги, используя свой автомобиль в качестве залога',
+							slideIndex: 3,
 						},
 					]
 				ul
 					each item in services
-						li 
+						li(onclick=`goToSlide(${item.slideIndex}, event)`) 
 							h3=item.title
 							p=item.txt 
 							.services_item__link 

@@ -415,9 +415,41 @@ const heroSlider = new Swiper('.hero_slider', {
 	}
 });
 
+function goToSlide(index, e) {
+	const allItems = document.querySelectorAll('.services_main ul li');
+	allItems.forEach(item => item.classList.remove('active'));
+	e.currentTarget.classList.add('active');
+	if (heroSlider && typeof index === 'number') {
+		heroSlider.slideToLoop(index);
+	}
+}
+
+
+
+
+const reviewsSlider = new Swiper('.reviews_slider ', {
+	allowTouchMove: true,
+	loop: true,
+	grabCursor: true,
+	a11y: true,
+	slidesPerView: 1,
+	spaceBetween: 30,
+	keyboard: {
+		enabled: true,
+		onlyInViewport: false,
+	},
+	navigation: {
+		nextEl: '.reviews_nav_next',
+		prevEl: '.reviews_nav_prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+	}
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
-	const hidden = document.getElementById('loanRange'); // display:none
+	const hidden = document.getElementById('loanRange');
 	const slider = document.querySelector('.calculator__slider');
 	const track = slider.querySelector('.slider__track');
 	const fill = slider.querySelector('.slider__progress');
@@ -427,39 +459,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	const max = +hidden.max;
 	const step = +hidden.step || 1;
 
-	// формат «400 000 ₽»
 	const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
-
-	/* ----- helpers ----- */
 	const valueToPercent = v => ((v - min) * 100) / (max - min);
 	const percentToValue = p => Math.round((min + p * (max - min) / 100) / step) * step;
 	const R = 12;
 
 	function render(val) {
-		const pct = valueToPercent(val); // процент по треку
-
-		/* 1. ширина полосы = pct + половина кружка */
-		// fill.style.width = `calc(${pct}%)`;
+		const pct = valueToPercent(val);
 		fill.style.width = `calc(${pct}% - ${R}px)`;
-
-		/* 3. подпись суммы */
 		out.textContent = fmt(val);
-
-		/* 4.	value отправляем в скрытый input	*/
 		hidden.value = val;
 	}
-
-
-	/* стартовая отрисовка */
 	render(+hidden.value || +slider.dataset.initial || min);
-
-	/* ------- drag & click -------- */
 	let dragging = false;
 
 	function move(e) {
 		const rect = track.getBoundingClientRect();
 		let pct = ((e.clientX - rect.left) / rect.width) * 100;
-		pct = Math.max(0, Math.min(100, pct)); // clamp
+		pct = Math.max(0, Math.min(100, pct));
 		render(percentToValue(pct));
 	}
 
