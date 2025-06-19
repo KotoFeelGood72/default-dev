@@ -18,6 +18,11 @@
 	@include flex-space;
 	align-items: flex-start;
 	padding: 5rem 0 3rem 0;
+	@include bp($point_2) {
+		flex-direction: column;
+		position: relative;
+		padding-bottom: 24.7rem;
+	}
 }
 
 .footer_logo {
@@ -26,6 +31,12 @@
 	border-radius: 1.5rem;
 	padding: 1.3rem 4rem;
 	margin-bottom: 7rem;
+	@include bp($point_2) {
+		max-width: 15rem;
+		margin-bottom: 5rem;
+		padding: 1rem 2.5rem;
+		border-radius: 1rem;
+	}
 }
 
 .footer_col__start {
@@ -37,12 +48,23 @@
 	flex-direction: column;
 	gap: 2rem;
 	opacity: 0.6;
+	@include bp($point_2) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		max-width: 33.2rem;
+		font-size: 1.6rem;
+		padding-bottom: 3rem;
+	}
 }
 
 .footer_col__menu {
 	display: flex;
 	flex-direction: column;
 	gap: 3rem;
+	@include bp($point_2) {
+		order: 1;
+	}
 	h6 {
 		font-size: 1.8rem;
 		opacity: 0.6;
@@ -65,10 +87,27 @@
 .footer_socials {
 	@include flex-start;
 	gap: 1.5rem;
+	@include bp($point_2) {
+		margin-bottom: 5rem;
+		gap: 1rem;
+	}
+	li {
+		@include bp($point_2) {
+			width: 6rem;
+			height: 6rem;
+			@include flex-center;
+		}
+	}
 }
 
 .footer_contacts__list {
 	margin-bottom: 9.7rem;
+	@include bp($point_2) {
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
 	a {
 		transition: all 0.2s ease-in-out;
 		&:hover {
@@ -81,6 +120,11 @@
 	@include flex-space;
 	padding: 1.5rem 0 3rem 0;
 	border-top: 0.2rem solid rgba(255, 255, 255, 0.589);
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2rem;
+	}
 	div {
 		font-weight: 500;
 		transition: all 0.2s ease-in-out;
@@ -112,4 +156,7 @@
 
 .footer_privacy {
 	padding-left: 8rem;
+	@include bp($point_2) {
+		padding: 0;
+	}
 }

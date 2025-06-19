@@ -31,7 +31,7 @@ body {
 
 	// background: $body_bg;
 	@include bp($point_2) {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 	}
 
 	@supports (display: grid) {
@@ -88,6 +88,10 @@ a {
 	max-width: $page_width;
 	margin: 0 auto;
 	padding: 0 2rem;
+
+	@include bp($point_6) {
+		padding: 0 1.4rem;
+	}
 }
 
 //------------------------------------------------------------base styles###
@@ -103,6 +107,16 @@ a {
 	transition: all 0.2s ease-in-out;
 	position: relative;
 	overflow: hidden;
+
+	@include bp($point_2) {
+		min-height: 5rem;
+		height: 5rem;
+		border-radius: 1rem;
+	}
+
+	@include bp($point_6) {
+		font-size: 1.6rem;
+	}
 
 	&.primary {
 		border: 0.2rem solid $blue;
@@ -143,6 +157,13 @@ a {
 	padding: 2rem 2.5rem;
 	border-radius: 1.5rem;
 	font-size: 1.8rem;
+
+	@include bp($point_2) {
+		font-size: 1.6rem;
+		padding: 2rem 1.5rem;
+		border-radius: 1rem;
+		height: 5rem;
+	}
 }
 
 h2,
@@ -152,13 +173,22 @@ h5,
 h6 {
 	font-size: 4.2rem;
 	font-weight: 700;
+	@include bp($point_2) {
+		font-size: 3.2rem;
+	}
 }
 
 .mb22 {
 	margin-bottom: 22rem;
+	@include bp($point_2) {
+		margin-bottom: 19rem;
+	}
 }
 .mb18 {
 	margin-bottom: 18rem;
+	@include bp($point_2) {
+		margin-bottom: 11rem;
+	}
 }
 
 .breadcrumbs {
@@ -205,4 +235,21 @@ h6 {
 
 span.u-text-black {
 	opacity: 0.6;
+}
+
+.global-pagination {
+	position: absolute;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	bottom: 1.5rem !important;
+
+	.swiper-pagination-bullet {
+		background: $white;
+		opacity: 1 !important;
+		border-radius: 6rem;
+
+		&-active {
+			width: 1.6rem !important;
+		}
+	}
 }

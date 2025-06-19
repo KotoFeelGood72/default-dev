@@ -5,6 +5,15 @@
 	color: $white;
 	border-radius: 1.5rem;
 	overflow: hidden;
+	@include bp($point_2) {
+		height: 55.7rem;
+		padding-bottom: 5.3rem;
+	}
+	@include bp($point_6) {
+		padding-bottom: 5.3rem !important;
+		height: 59.1rem;
+		padding: 2.5rem 1.2rem 1.2rem 1.2rem;
+	}
 }
 
 .hero_img {
@@ -23,20 +32,45 @@
 
 .hero_slide__content {
 	max-width: 69.6rem;
+	@include bp($point_2) {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 	h1 {
 		font-size: 5.2rem;
 		margin-bottom: 1.5rem;
 		line-height: 120%;
+		@include bp($point_2) {
+			font-size: 3.4rem;
+			max-width: 48.5rem;
+		}
 	}
 	p {
 		max-width: 58.2rem;
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			max-width: 40.6rem;
+			font-size: 1.6rem;
+			flex-grow: 1;
+		}
 	}
 }
 
 .hero_slide_btn__row {
 	@include flex-start;
 	gap: 1.5rem;
+	@include bp($point_2) {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.btn {
+		@include bp($point_2) {
+			width: 100%;
+		}
+	}
 }
 
 // Services
@@ -46,10 +80,24 @@
 	position: relative;
 	z-index: 2;
 	padding: 0 3rem;
-	ul {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-		gap: 1.5rem;
+	@include bp($point_2) {
+		padding: 0;
+		margin: 2rem 0 16rem 0;
+	}
+	.swiper-wrapper {
+		@include bp($point_6, $direction: min) {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+			gap: 1.5rem;
+		}
+		@include bp($point_2) {
+			gap: 1rem;
+			grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+		}
+		@include bp($point_6) {
+			gap: 0;
+		}
+
 		li {
 			background-color: $white;
 			border-radius: 1.5rem;
@@ -59,6 +107,9 @@
 			gap: 1rem;
 			min-height: 25rem;
 			position: relative;
+			@include bp($point_2) {
+				min-height: 23.6rem;
+			}
 
 			&:before {
 				position: absolute;
@@ -72,6 +123,9 @@
 				opacity: 0;
 				transition: all 0.3s ease-in-out;
 				content: "";
+				@include bp($point_2) {
+					display: none;
+				}
 			}
 			&.active {
 				&:before {
@@ -81,6 +135,9 @@
 
 			h3 {
 				font-size: 2.4rem;
+				@include bp($point_2) {
+					font-size: 2.2rem;
+				}
 			}
 			p {
 				opacity: 0.6;
@@ -111,12 +168,19 @@
 	border-radius: 1.5rem;
 	background-color: $white;
 	margin-bottom: 19rem;
+	@include bp($point_2) {
+		padding: 3rem 2rem 2rem 2rem;
+	}
 }
 
 .calculator_main {
 	@include flex-start;
 	gap: 10rem;
 	margin-bottom: 3rem;
+	@include bp($point_2) {
+		gap: 5.5rem;
+		flex-direction: column;
+	}
 }
 
 .calculator__forms {
@@ -127,17 +191,40 @@
 	display: flex;
 	flex-direction: column;
 
+	@include bp($point_2) {
+		width: 100%;
+		padding: 3rem 2rem 2rem 2rem;
+	}
+
+	@include bp($point_6) {
+		padding: 3rem 1.2rem;
+	}
+
 	h3 {
 		font-size: 2.4rem;
 		font-weight: 600;
 		margin-bottom: 3rem;
+		@include bp($point_2) {
+			font-size: 2.2rem;
+		}
 	}
 }
 
 .calculator__slider__w {
+	@include bp($point_2) {
+		width: 100%;
+	}
 	h3 {
 		font-size: 4.2rem;
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			font-size: 3.2rem;
+			margin-bottom: 3rem;
+		}
+
+		@include bp($point_6) {
+			font-size: 2.8rem;
+		}
 	}
 }
 
@@ -156,6 +243,9 @@
 	span {
 		font-size: 2.8rem;
 		font-weight: 700;
+		@include bp($point_2) {
+			font-size: 2.2rem;
+		}
 	}
 }
 
@@ -164,6 +254,10 @@
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-bottom: 5rem;
+	@include bp($point_2) {
+		font-size: 1.6rem;
+		margin-bottom: 2.6rem;
+	}
 }
 
 .slider input[type="range"] {
@@ -224,6 +318,9 @@
 		font-size: 1.8rem;
 		font-weight: 500;
 		margin-bottom: 2rem;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
 	}
 }
 
@@ -247,6 +344,11 @@
 			border-radius: 1rem;
 			cursor: pointer;
 			transition: all 0.2s ease-in-out;
+			@include bp($point_2) {
+				padding: 2rem 2.3rem;
+				font-size: 1.6rem;
+				height: 5rem;
+			}
 		}
 	}
 }
@@ -263,6 +365,9 @@
 	font-size: 2.4rem;
 	font-weight: 700;
 	color: $blue;
+	@include bp($point_2) {
+		font-size: 2.8rem;
+	}
 }
 
 .calculator_forms__qty__minus,
@@ -272,6 +377,11 @@
 	@include flex-center;
 	border: 0.1rem solid $black;
 	border-radius: 100rem;
+
+	@include bp($point_2) {
+		width: 4.5rem;
+		height: 4.5rem;
+	}
 
 	.gl__icon {
 		@include flex-center;
@@ -337,6 +447,16 @@
 		@include flex-start;
 		gap: 6rem;
 		flex-wrap: wrap;
+
+		@include bp($point_2) {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+			grid-gap: 1rem;
+		}
+
+		@include bp($point_6) {
+			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		}
 		li {
 			@include flex-start;
 			gap: 1rem;
@@ -346,6 +466,11 @@
 			padding: 1.5rem 2rem;
 			flex-grow: 1;
 			font-size: 1.8rem;
+			@include bp($point_2) {
+				height: 100%;
+				font-size: 2rem;
+				height: 7.5rem;
+			}
 
 			.gl__icon {
 				width: 3.5rem;
@@ -359,9 +484,17 @@
 
 .whats_main {
 	margin-bottom: 17rem;
+	@include bp($point_2) {
+		margin-bottom: 15rem;
+	}
 	h4 {
 		text-align: center;
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			text-align: left;
+			font-size: 3.2rem;
+			margin-bottom: 3rem;
+		}
 	}
 }
 
@@ -370,6 +503,9 @@
 	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 	gap: 2.2rem;
 	counter-reset: list-counter;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
 	li {
 		background-color: $white;
 		border-radius: 1.5rem;
@@ -377,6 +513,14 @@
 		position: relative;
 		min-height: 36.8rem;
 		counter-increment: list-counter;
+		@include bp($point_2) {
+			padding: 2rem 2.5rem;
+			min-height: 13.2rem;
+			overflow: hidden;
+		}
+		@include bp($point_6) {
+			min-height: 30.6rem;
+		}
 		&:before {
 			content: counter(list-counter, decimal-leading-zero);
 			position: absolute;
@@ -385,14 +529,27 @@
 			font-size: 3.2rem;
 			color: $blue;
 			font-weight: 700;
+			@include bp($point_2) {
+				display: none;
+			}
+
+			@include bp($point_6) {
+				display: block;
+			}
 		}
 	}
 }
 
 .whats_item__head {
+	@include bp($point_2) {
+		max-width: 37.6rem;
+	}
 	h3 {
 		font-size: 2.4rem;
 		margin-bottom: 1rem;
+		@include bp($point_2) {
+			font-size: 2.2rem;
+		}
 	}
 }
 
@@ -402,6 +559,11 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	@include bp($point_2) {
+		max-width: 13rem;
+		@include flex-center;
+		margin-right: 2rem;
+	}
 }
 
 .actions__main {
@@ -411,17 +573,38 @@
 	position: relative;
 	border-radius: 1.5rem;
 	margin-bottom: 17rem;
+	@include bp($point_2) {
+		padding: 4rem 2.5rem;
+		overflow: hidden;
+		margin-bottom: 15rem;
+	}
+
+	@include bp($point_6) {
+		min-height: 65rem;
+		align-items: flex-start;
+	}
 }
 
 .actions__form {
 	max-width: 54.6rem;
 	width: 100%;
+	@include bp($point_2) {
+		max-width: 40.4rem;
+	}
 	h4 {
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+			font-size: 3.2rem;
+		}
 	}
 	.global_input {
 		margin-bottom: 3rem;
 		width: 100%;
+		@include bp($point_2) {
+			max-width: 34rem;
+			margin-bottom: 2rem;
+		}
 	}
 
 	.btn.primary {
@@ -435,30 +618,79 @@
 	position: absolute;
 	bottom: 0;
 	right: 6.4rem;
+	@include bp($point_2) {
+		max-width: 38rem;
+		right: -1rem;
+	}
+
+	@include bp($point_6) {
+		right: 0;
+	}
 }
 
 .require_main,
 .reviews_main {
 	margin-bottom: 22rem;
+	@include bp($point_2) {
+		margin-bottom: 19rem;
+	}
 	h4 {
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			font-size: 3.2rem;
+			margin-bottom: 3rem;
+		}
 	}
 }
 
 .require__list {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-	grid-gap: 2rem;
+	@include bp($point_6) {
+		padding-bottom: 5rem !important;
+	}
+}
+
+.require__list .swiper-wrapper {
+	@include bp($point_2, $direction: min) {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+		grid-gap: 2rem;
+	}
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+		gap: 1rem;
+	}
+
+	@include bp($point_6) {
+		gap: 0;
+	}
+
+	li {
+		&:last-child {
+			@include bp($point_2) {
+				grid-column: 1 / -1;
+			}
+		}
+	}
 }
 
 .require__item {
 	padding: 3rem 3rem 5rem 2.5rem;
 	background-color: $white;
 	border-radius: 1.5rem;
+	@include bp($point_2) {
+		padding: 2rem 2rem 4.7rem 2rem;
+	}
+	@include bp($point_6) {
+		min-height: 39.2rem;
+	}
 	h5 {
 		font-size: 2.4rem;
 		color: $blue;
 		margin-bottom: 3rem;
+		@include bp($point_2) {
+			font-size: 2.2rem;
+			margin-bottom: 2rem;
+		}
 	}
 }
 
@@ -467,6 +699,9 @@
 	flex-direction: column;
 	gap: 2.5rem;
 	counter-reset: list-counter;
+	@include bp($point_2) {
+		gap: 2rem;
+	}
 	li {
 		counter-increment: list-counter;
 		&:before {
@@ -479,11 +714,17 @@
 .reviews__head {
 	@include flex-space;
 	margin-bottom: 4rem;
+	@include bp($point_2) {
+		margin-bottom: 3rem;
+	}
 }
 
 .reviews__nav {
 	@include flex-end;
 	gap: 2rem;
+	@include bp($point_2) {
+		display: none;
+	}
 	div {
 		width: 6rem;
 		height: 6rem;
@@ -504,17 +745,39 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
 	grid-gap: 10rem;
+	@include bp($point_2) {
+		padding: 2rem 2.5rem;
+		gap: 3rem;
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
 }
 
 .reviews_slide__content {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+	@include bp($point_2) {
+		gap: 3rem;
+	}
 }
 
 .reviews_slide__img {
 	border-radius: 1.5rem;
 	overflow: hidden;
+	@include bp($point_2) {
+		max-height: 36.8rem;
+		width: 100%;
+	}
+
+	@include bp($point_6) {
+		display: none;
+	}
+	img {
+		@include bp($point_2) {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
 }
 
 .reviews_slide_content__head {
@@ -533,6 +796,15 @@
 		@include flex-space;
 		font-size: 1.8rem;
 		font-weight: 500;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+
+		@include bp($point_6) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 2rem;
+		}
 		p {
 			color: $blue;
 		}
@@ -546,8 +818,14 @@
 
 .faq_main__w {
 	margin-bottom: 22rem;
+	@include bp($point_2) {
+		margin-bottom: 19rem;
+	}
 	h6 {
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+		}
 	}
 }
 
@@ -555,12 +833,19 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
 	gap: 2rem;
+	@include bp($point_2) {
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
 }
 
 .faq_acc {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
+	@include bp($point_2) {
+		gap: 1rem;
+	}
 }
 
 .faq_item {
@@ -570,6 +855,9 @@
 	transition: all 0.2s ease-in-out;
 	user-select: none;
 
+	@include bp($point_2) {
+		padding: 1rem 2rem;
+	}
 	&.active {
 		background-color: $blue;
 		color: $white;
@@ -588,12 +876,22 @@
 	p {
 		font-size: 2.4rem;
 		font-weight: 500;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
+
+		@include bp($point_6) {
+			max-width: 24rem;
+		}
 	}
 }
 
 .faq_item__content {
 	padding-top: 2.2rem;
 	display: none;
+	@include bp($point_2) {
+		padding-top: 2rem;
+	}
 }
 
 .faq_item__icon {
@@ -615,8 +913,14 @@
 
 .addservices_main {
 	margin-bottom: 22rem;
+	@include bp($point_2) {
+		margin-bottom: 19rem;
+	}
 	h6 {
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+		}
 	}
 }
 
@@ -624,6 +928,13 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 	grid-gap: 2rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	}
+
+	@include bp($point_6) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
 	li {
 		background-color: $white;
 		border-radius: 1.5rem;
@@ -631,10 +942,16 @@
 		position: relative;
 		min-height: 32.5rem;
 		cursor: pointer;
+		@include bp($point_2) {
+			min-height: 27.8rem;
+		}
 
 		h3 {
 			font-size: 2.4rem;
 			margin-bottom: 1rem;
+			@include bp($point_2) {
+				font-size: 2.2rem;
+			}
 		}
 	}
 }
@@ -645,6 +962,9 @@
 	right: 1.5rem;
 	width: 14.9rem;
 	@include flex-center;
+	@include bp($point_2) {
+		max-width: 12rem;
+	}
 }
 
 .addservices_item__link {
@@ -665,6 +985,10 @@
 .about {
 	h6 {
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+			font-size: 3.2rem;
+		}
 	}
 }
 
@@ -672,11 +996,22 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
 	gap: 2.4rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		gap: 2rem;
+	}
 }
 .about_list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
 	gap: 2.4rem;
+	@include bp($point_2) {
+		gap: 1rem;
+	}
+
+	@include bp($point_6) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
 	.about_item {
 		background-color: $white;
 		border-radius: 1.5rem;
@@ -684,6 +1019,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
+		@include bp($point_2) {
+			padding: 2rem;
+		}
 	}
 }
 
@@ -692,6 +1030,9 @@
 		font-size: 3.8rem;
 		color: $blue;
 		margin-bottom: 0.5rem;
+		@include bp($point_2) {
+			font-size: 3.2rem;
+		}
 	}
 
 	p {
@@ -731,6 +1072,9 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	@include bp($point_2) {
+		min-height: 45rem;
+	}
 	h6,
 	p {
 		max-width: 42.4rem;
@@ -747,6 +1091,9 @@
 
 .about_btn {
 	max-width: 24rem;
+	@include bp($point_2) {
+		max-width: 100%;
+	}
 }
 
 .homenews__head {
@@ -758,6 +1105,18 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 	grid-gap: 2rem;
+	@include bp($point_2) {
+		grid-gap: 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	}
+
+	li {
+		&:nth-child(n + 3) {
+			@include bp($point_2) {
+				display: none;
+			}
+		}
+	}
 }
 
 .newsCard {
@@ -767,10 +1126,17 @@
 	padding: 3rem 2.5rem 2.5rem 2.5rem;
 	display: flex;
 	flex-direction: column;
+	@include bp($point_2) {
+		padding: 2.5rem 1.5rem;
+		min-height: 30.2rem;
+	}
 	h3 {
 		font-size: 2.4rem;
 		font-weight: 500;
 		flex-grow: 1;
+		@include bp($point_2) {
+			font-size: 2rem;
+		}
 	}
 }
 
@@ -791,10 +1157,16 @@
 
 .newsCard__date {
 	font-size: 1.8rem;
+	@include bp($point_2) {
+		font-size: 1.6rem;
+	}
 	span {
 		display: flex;
 		font-size: 3.8rem;
 		font-weight: 700;
+		@include bp($point_2) {
+			font-size: 2.8rem;
+		}
 	}
 }
 
@@ -803,6 +1175,10 @@
 	height: 6rem;
 	background-color: $blue;
 	border-radius: 1rem;
+	@include bp($point_2) {
+		width: 5rem;
+		height: 5rem;
+	}
 	a {
 		@include flex-center;
 		width: 100%;
@@ -817,8 +1193,14 @@
 
 .maps_main {
 	margin-bottom: 18rem;
+	@include bp($point_2) {
+		margin-bottom: 15rem;
+	}
 	h6 {
 		margin-bottom: 4rem;
+		@include bp($point_2) {
+			margin-bottom: 3rem;
+		}
 	}
 }
 
@@ -828,6 +1210,10 @@
 	background-color: $white;
 	border-radius: 1.5rem;
 	height: 72rem;
+	@include bp($point_2) {
+		height: 46.3rem;
+		padding: 2rem;
+	}
 }
 
 .map__card {
@@ -837,6 +1223,11 @@
 	border-radius: 1.5rem;
 	background-color: $white;
 	position: absolute;
+	@include bp($point_2) {
+		top: 3rem;
+		left: 3rem;
+		padding: 2rem 6rem 2rem 2rem;
+	}
 }
 
 .fform_main {
@@ -846,11 +1237,25 @@
 	border-radius: 1.5rem;
 	padding: 2rem 2rem 2rem 4rem;
 	gap: 12rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		gap: 0.8rem;
+		padding: 3rem 2.5rem;
+	}
 }
 
 .fform_col__img {
 	border-radius: 1.5rem;
 	overflow: hidden;
+	@include bp($point_2) {
+		max-height: 39rem;
+	}
+	img {
+		@include bp($point_2) {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
 }
 
 .fform_form__head {
@@ -870,4 +1275,35 @@
 	justify-content: center;
 	gap: 2rem;
 	margin-bottom: 2rem;
+	@include bp($point_2) {
+		// margin-bottom: 0;
+	}
+}
+
+.reviews-pagination,
+.services-pagination,
+.require-pagination {
+	.swiper-pagination-bullet {
+		background: $white;
+		opacity: 1 !important;
+		border-radius: 6rem;
+
+		&-active {
+			background: $blue;
+			width: 1.6rem !important;
+		}
+	}
+}
+
+.services_mobile {
+	@include bp($point_6) {
+		padding-bottom: 5rem !important;
+	}
+}
+
+.reviews_slider {
+	position: relative;
+	@include bp($point_2) {
+		padding-bottom: 5rem !important;
+	}
 }

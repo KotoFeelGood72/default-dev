@@ -60,7 +60,7 @@ block content_block
 										h1=slide.title
 										p=slide.text
 										.hero_slide_btn__row
-											.hero_btn.btn.white.primary=slide.btn[0]
+											.hero_btn.btn.white.primary.border-none=slide.btn[0]
 											if slide.btn.length > 1
 												.btn.hero_btn.white.secondary=slide.btn[1]
 									.hero_img
@@ -68,6 +68,7 @@ block content_block
 											source(srcset=slide.imgDesktop, media='(min-width:1024px)')
 											source(srcset=slide.imgTablet,  media='(min-width:640px)')
 											img(src=slide.imgMobile, alt=slide.title)
+					.hero-pagination.global-pagination.swiper-pagination
 	section.services 
 		.section_in 
 			.services_main
@@ -94,13 +95,15 @@ block content_block
 							slideIndex: 3,
 						},
 					]
-				ul
-					each item in services
-						li(onclick=`goToSlide(${item.slideIndex}, event)`) 
-							h3=item.title
-							p=item.txt 
-							.services_item__link 
-								+iconify({icon: 'bi:chevron-right'})
+				ul.swiper.services_mobile 
+					.swiper-wrapper
+						each item in services
+							li.swiper-slide(onclick=`goToSlide(${item.slideIndex}, event)`) 
+								h3=item.title
+								p=item.txt 
+								.services_item__link 
+									+iconify({icon: 'bi:chevron-right'})
+					.services-pagination.global-pagination.swiper-pagination
 	section.calculator 
 		.section_in
 			.calculator_main__w 
@@ -187,35 +190,41 @@ block content_block
 					+input({place: 'Ваш телефон'})
 					.btn.actions_btn.primary Узнать
 				.actions_img 
-					img(src="/i/form-desktop.png")
+					//- img(src="/i/form-desktop.png")
+					picture
+						source(srcset="/i/form-desktop.png", media='(min-width:1024px)')
+						source(srcset="/i/actions2.png",  media='(min-width:640px)')
+						img(src="/i/actions1.png", )
 	section.require 
 		.section_in 
 			.require_main 
 				h4 Что необходимо для получения займа?
-				ul.require__list
-					li.require__item 
-						h5 Условия получения займа
-						ul.require_item__list 
-							li От 100 000 рублей
-							li От 2.5% в месяц
-							li Оформление по договору займа
-							li Без переоформления
-							li Оформление до 36 месяцев
-							li Без комиссии
-					li.require__item 
-						h5 Требования
-						ul.require_item__list 
-							li Гражданство РФ
-							li Авто не старше 2002 года выпуска
-							li Автомобиль на ходу
-							li Стоит на учете
-							li Возраст от 18 до 70(включительно)
-					li.require__item 
-						h5 Документы
-						ul.require_item__list 
-							li ПТС - паспорт транспортного средства
-							li СТС - свидетельство транспортного средства
-							li Паспорт РФ
+				ul.require__list.swiper 
+					.swiper-wrapper 
+						li.require__item.swiper-slide 
+							h5 Условия получения займа
+							ul.require_item__list 
+								li От 100 000 рублей
+								li От 2.5% в месяц
+								li Оформление по договору займа
+								li Без переоформления
+								li Оформление до 36 месяцев
+								li Без комиссии
+						li.require__item.swiper-slide
+							h5 Требования
+							ul.require_item__list 
+								li Гражданство РФ
+								li Авто не старше 2002 года выпуска
+								li Автомобиль на ходу
+								li Стоит на учете
+								li Возраст от 18 до 70(включительно)
+						li.require__item.swiper-slide 
+							h5 Документы
+							ul.require_item__list 
+								li ПТС - паспорт транспортного средства
+								li СТС - свидетельство транспортного средства
+								li Паспорт РФ
+					.require-pagination.global-pagination.swiper-pagination
 	section.reviews 
 		.section_in 
 			.reviews_main 
@@ -227,30 +236,32 @@ block content_block
 						.reviews_nav_next
 							+iconify({icon: 'prime:arrow-right', width: '4rem', height: '4rem'})
 				.reviews_slider.swiper 
-					.swiper-wrapper 
-						.swiper-slide 
-							.reviews_slide 
-								.reviews_slide__content 
-									.reviews_slide_content__head 
-										h6 Виктория
-										p 15 июня 2019
-									ul.reviews_slide__params 
-										li 
-											span Марка и модель автомобиля
-											p Toyota RAV4
-										li 
-											span Год выпуска
-											p 2012
-										li 
-											span Сумма займа
-											p 600 000 ₽
-										li 
-											span Ставка в месяц
-											p 4,2%
-									.reviews_slide__txt 
-										p Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!
-								.reviews_slide__img 
-									img(src="/i/reviews.jpg")
+					.swiper-wrapper
+						-for(i = 0; i < 12; i++) 
+							.swiper-slide 
+								.reviews_slide 
+									.reviews_slide__content 
+										.reviews_slide_content__head 
+											h6 Виктория
+											p 15 июня 2019
+										ul.reviews_slide__params 
+											li 
+												span Марка и модель автомобиля
+												p Toyota RAV4
+											li 
+												span Год выпуска
+												p 2012
+											li 
+												span Сумма займа
+												p 600 000 ₽
+											li 
+												span Ставка в месяц
+												p 4,2%
+										.reviews_slide__txt 
+											p Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!
+									.reviews_slide__img 
+										img(src="/i/reviews.jpg")
+					.reviews-pagination.global-pagination.swiper-pagination
 	section.faq 
 		.section_in 
 			.faq_main__w 
@@ -324,7 +335,7 @@ block content_block
 				.about_action 
 					picture
 						source(srcset="/i/about.jpg", media='(min-width:1024px)')
-						source(srcset="/i/about.jpg",  media='(min-width:640px)')
+						source(srcset="/i/about1.jpg",  media='(min-width:640px)')
 						img(src="/i/about.jpg", )
 					.about_action__content
 						h6 «ОК Залог» более <br/>10 лет с вами!

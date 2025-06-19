@@ -41,7 +41,7 @@
                         <h1>Займы под залог ПТС – авто остаётся с вами!</h1>
                         <p>Оформляем займы без передачи авто: перезалог, доверенность, ограничения в ПТС. Решим вопрос за час – даже на дому!</p>
                         <div class="hero_slide_btn__row">
-                          <div class="hero_btn btn white primary">Получить деньги сегодня</div>
+                          <div class="hero_btn btn white primary border-none">Получить деньги сегодня</div>
                           <div class="btn hero_btn white secondary">Узнать подробности</div>
                         </div>
                       </div>
@@ -59,7 +59,7 @@
                         <h1>Займы под залог недвижимости</h1>
                         <p>Квартира, дом или коммерческая недвижимость — одобряем до 80 % от стоимости объекта за 1 день.</p>
                         <div class="hero_slide_btn__row">
-                          <div class="hero_btn btn white primary">Получить деньги сегодня</div>
+                          <div class="hero_btn btn white primary border-none">Получить деньги сегодня</div>
                           <div class="btn hero_btn white secondary">Узнать подробности</div>
                         </div>
                       </div>
@@ -77,7 +77,7 @@
                         <h1>Потребительские кредиты</h1>
                         <p>Без залога и поручителей. Ставка от 4,9 % годовых. Решение за 15 минут.</p>
                         <div class="hero_slide_btn__row">
-                          <div class="hero_btn btn white primary">Оформить заявку</div>
+                          <div class="hero_btn btn white primary border-none">Оформить заявку</div>
                           <div class="btn hero_btn white secondary">Подробнее</div>
                         </div>
                       </div>
@@ -95,7 +95,7 @@
                         <h1>Автокредит до 1 млн ₽</h1>
                         <p>Новый или б/у автомобиль. Первоначальный взнос — 0 %. Оформление в день обращения.</p>
                         <div class="hero_slide_btn__row">
-                          <div class="hero_btn btn white primary">Рассчитать платёж</div>
+                          <div class="hero_btn btn white primary border-none">Рассчитать платёж</div>
                           <div class="btn hero_btn white secondary">Подробнее</div>
                         </div>
                       </div>
@@ -113,7 +113,7 @@
                         <h1>Автокредит до 1 млн ₽ (повтор)</h1>
                         <p>Новый или б/у автомобиль. Первоначальный взнос — 0 %. Оформление в день обращения.</p>
                         <div class="hero_slide_btn__row">
-                          <div class="hero_btn btn white primary">Рассчитать платёж</div>
+                          <div class="hero_btn btn white primary border-none">Рассчитать платёж</div>
                           <div class="btn hero_btn white secondary">Подробнее</div>
                         </div>
                       </div>
@@ -126,6 +126,7 @@
                     </div>
                   </div>
                 </div>
+                <div class="hero-pagination global-pagination swiper-pagination"></div>
               </div>
             </div>
           </div>
@@ -133,35 +134,38 @@
         <section class="services"> 
           <div class="section_in"> 
             <div class="services_main">
-              <ul>
-                <li onclick="goToSlide(0, event)"> 
-                  <h3>Займы под залог ПТС</h3>
-                  <p>Получите деньги, используя свой автомобиль в качестве залога</p>
-                  <div class="services_item__link"> 
-                    <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
-                  </div>
-                </li>
-                <li onclick="goToSlide(1, event)"> 
-                  <h3>Займы под залог недвижимости</h3>
-                  <p>Крупные суммы займов и выгодные процентные ставки</p>
-                  <div class="services_item__link"> 
-                    <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
-                  </div>
-                </li>
-                <li onclick="goToSlide(2, event)"> 
-                  <h3>Потребительские кредиты</h3>
-                  <p>На любые цели — с выгодными ставками и мгновенным одобрением!</p>
-                  <div class="services_item__link"> 
-                    <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
-                  </div>
-                </li>
-                <li onclick="goToSlide(3, event)"> 
-                  <h3>Автокредит до 1 млн ₽</h3>
-                  <p>Получите деньги, используя свой автомобиль в качестве залога</p>
-                  <div class="services_item__link"> 
-                    <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
-                  </div>
-                </li>
+              <ul class="swiper services_mobile"> 
+                <div class="swiper-wrapper">
+                  <li class="swiper-slide" onclick="goToSlide(0, event)"> 
+                    <h3>Займы под залог ПТС</h3>
+                    <p>Получите деньги, используя свой автомобиль в качестве залога</p>
+                    <div class="services_item__link"> 
+                      <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide" onclick="goToSlide(1, event)"> 
+                    <h3>Займы под залог недвижимости</h3>
+                    <p>Крупные суммы займов и выгодные процентные ставки</p>
+                    <div class="services_item__link"> 
+                      <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide" onclick="goToSlide(2, event)"> 
+                    <h3>Потребительские кредиты</h3>
+                    <p>На любые цели — с выгодными ставками и мгновенным одобрением!</p>
+                    <div class="services_item__link"> 
+                      <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
+                    </div>
+                  </li>
+                  <li class="swiper-slide" onclick="goToSlide(3, event)"> 
+                    <h3>Автокредит до 1 млн ₽</h3>
+                    <p>Получите деньги, используя свой автомобиль в качестве залога</p>
+                    <div class="services_item__link"> 
+                      <div class="gl__icon"> <span class="iconify" data-icon="bi:chevron-right" data-width="2.4rem" data-height="2.4rem"></span></div>
+                    </div>
+                  </li>
+                </div>
+                <div class="services-pagination global-pagination swiper-pagination"></div>
               </ul>
             </div>
           </div>
@@ -296,7 +300,12 @@
                 <input class="global_input" type="text" value="" placeholder="Ваш телефон"/>
                 <div class="btn actions_btn primary">Узнать</div>
               </div>
-              <div class="actions_img"> <img src="/i/form-desktop.png"></div>
+              <div class="actions_img"> 
+                <picture>
+                  <source srcset="/i/form-desktop.png" media="(min-width:1024px)">
+                  <source srcset="/i/actions2.png" media="(min-width:640px)"><img src="/i/actions1.png">
+                </picture>
+              </div>
             </div>
           </div>
         </section>
@@ -304,36 +313,39 @@
           <div class="section_in"> 
             <div class="require_main"> 
               <h4>Что необходимо для получения займа?</h4>
-              <ul class="require__list">
-                <li class="require__item"> 
-                  <h5>Условия получения займа</h5>
-                  <ul class="require_item__list"> 
-                    <li>От 100 000 рублей</li>
-                    <li>От 2.5% в месяц</li>
-                    <li>Оформление по договору займа</li>
-                    <li>Без переоформления</li>
-                    <li>Оформление до 36 месяцев</li>
-                    <li>Без комиссии</li>
-                  </ul>
-                </li>
-                <li class="require__item"> 
-                  <h5>Требования</h5>
-                  <ul class="require_item__list"> 
-                    <li>Гражданство РФ</li>
-                    <li>Авто не старше 2002 года выпуска</li>
-                    <li>Автомобиль на ходу</li>
-                    <li>Стоит на учете</li>
-                    <li>Возраст от 18 до 70(включительно)</li>
-                  </ul>
-                </li>
-                <li class="require__item"> 
-                  <h5>Документы</h5>
-                  <ul class="require_item__list"> 
-                    <li>ПТС - паспорт транспортного средства</li>
-                    <li>СТС - свидетельство транспортного средства</li>
-                    <li>Паспорт РФ</li>
-                  </ul>
-                </li>
+              <ul class="require__list swiper"> 
+                <div class="swiper-wrapper"> 
+                  <li class="require__item swiper-slide"> 
+                    <h5>Условия получения займа</h5>
+                    <ul class="require_item__list"> 
+                      <li>От 100 000 рублей</li>
+                      <li>От 2.5% в месяц</li>
+                      <li>Оформление по договору займа</li>
+                      <li>Без переоформления</li>
+                      <li>Оформление до 36 месяцев</li>
+                      <li>Без комиссии</li>
+                    </ul>
+                  </li>
+                  <li class="require__item swiper-slide">
+                    <h5>Требования</h5>
+                    <ul class="require_item__list"> 
+                      <li>Гражданство РФ</li>
+                      <li>Авто не старше 2002 года выпуска</li>
+                      <li>Автомобиль на ходу</li>
+                      <li>Стоит на учете</li>
+                      <li>Возраст от 18 до 70(включительно)</li>
+                    </ul>
+                  </li>
+                  <li class="require__item swiper-slide"> 
+                    <h5>Документы</h5>
+                    <ul class="require_item__list"> 
+                      <li>ПТС - паспорт транспортного средства</li>
+                      <li>СТС - свидетельство транспортного средства</li>
+                      <li>Паспорт РФ</li>
+                    </ul>
+                  </li>
+                </div>
+                <div class="require-pagination global-pagination swiper-pagination"></div>
               </ul>
             </div>
           </div>
@@ -353,7 +365,315 @@
                 </div>
               </div>
               <div class="reviews_slider swiper"> 
-                <div class="swiper-wrapper"> 
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <div class="reviews_slide"> 
+                      <div class="reviews_slide__content"> 
+                        <div class="reviews_slide_content__head"> 
+                          <h6>Виктория</h6>
+                          <p>15 июня 2019</p>
+                        </div>
+                        <ul class="reviews_slide__params"> 
+                          <li> <span>Марка и модель автомобиля</span>
+                            <p>Toyota RAV4</p>
+                          </li>
+                          <li> <span>Год выпуска</span>
+                            <p>2012</p>
+                          </li>
+                          <li> <span>Сумма займа</span>
+                            <p>600 000 ₽</p>
+                          </li>
+                          <li> <span>Ставка в месяц</span>
+                            <p>4,2%</p>
+                          </li>
+                        </ul>
+                        <div class="reviews_slide__txt"> 
+                          <p>Хотелось бы поблагодарить компанию за срочную помошь в получение денег. К сожалению не было возможности собирать справки для банков и я решила обратиться в автоломбард. К моему удивлению автомобиль оставлять не пришлось и я заложила птс и уехала на своём любимом автомобиле. Моей радости нет предела. Спасибо Вам за работу!</p>
+                        </div>
+                      </div>
+                      <div class="reviews_slide__img"> <img src="/i/reviews.jpg"></div>
+                    </div>
+                  </div>
                   <div class="swiper-slide"> 
                     <div class="reviews_slide"> 
                       <div class="reviews_slide__content"> 
@@ -383,6 +703,7 @@
                     </div>
                   </div>
                 </div>
+                <div class="reviews-pagination global-pagination swiper-pagination"></div>
               </div>
             </div>
           </div>
@@ -545,7 +866,7 @@
               <div class="about_action"> 
                 <picture>
                   <source srcset="/i/about.jpg" media="(min-width:1024px)">
-                  <source srcset="/i/about.jpg" media="(min-width:640px)"><img src="/i/about.jpg">
+                  <source srcset="/i/about1.jpg" media="(min-width:640px)"><img src="/i/about.jpg">
                 </picture>
                 <div class="about_action__content">
                   <h6>«ОК Залог» более <br/>10 лет с вами!</h6>

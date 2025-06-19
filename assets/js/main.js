@@ -16,10 +16,41 @@ $(document).ready(function ($) {
 
 $(window).on('load', function () {
 	updateSizes();
-	loadFunc();
-	// allDefautAnim();
-	// burgerMobile();
+	// loadFunc();
 	scrollNav();
+	if (windowWidth < mediaPoint3) {
+
+		const servicesSlider = new Swiper('.services_mobile', {
+			allowTouchMove: true,
+			// loop: true,
+			grabCursor: true,
+			a11y: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			keyboard: {
+				enabled: true,
+				onlyInViewport: false,
+			},
+			pagination: {
+				el: '.services-pagination',
+			}
+		});
+		const requireSlider = new Swiper('.require__list ', {
+			allowTouchMove: true,
+			// loop: true,
+			grabCursor: true,
+			a11y: true,
+			slidesPerView: 1,
+			spaceBetween: 30,
+			keyboard: {
+				enabled: true,
+				onlyInViewport: false,
+			},
+			pagination: {
+				el: '.require-pagination',
+			}
+		});
+	}
 	if (windowWidth > mediaPoint1) {
 		popup('14px', '.form_open', '.popup_form');
 		popup('14px', '.addservices_item', '.popup_info');
@@ -38,52 +69,18 @@ $(window).on('scroll', function () {
 	scrollFunc();
 });
 
-function loadFunc() {
-	calcViewportHeight();
-}
 
 function resizeFunc() {
 	updateSizes();
-
-	calcViewportHeight();
 }
 
 function scrollFunc() {}
 
-function calcViewportHeight() {
-	if (isMobile.apple.phone || isMobile.android.phone || isMobile.seven_inch) {
-		var vh = window.innerHeight * 0.01;
-		document.documentElement.style.setProperty('--vh', vh + 'px');
-	}
-}
+
 
 function updateSizes() {
 	windowWidth = window.innerWidth;
 	windowHeight = window.innerHeight;
-}
-
-if ('objectFit' in document.documentElement.style === false) {
-	document.addEventListener('DOMContentLoaded', function () {
-		Array.prototype.forEach.call(
-			document.querySelectorAll('img[data-object-fit]'),
-			function (image) {
-				(image.runtimeStyle || image.style).background =
-					'url("' +
-					image.src +
-					'") no-repeat 50%/' +
-					(image.currentStyle ?
-						image.currentStyle['object-fit'] :
-						image.getAttribute('data-object-fit'));
-
-				image.src =
-					"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='" +
-					image.width +
-					"' height='" +
-					image.height +
-					"'%3E%3C/svg%3E";
-			}
-		);
-	});
 }
 
 function succes(success) {
@@ -100,46 +97,10 @@ function close(closes) {
 	}, 3000)
 }
 
-function getRandomInt(min, max) {
-	return Math.floor(Math.random() * (max - min)) + min;
-}
 
-function getRandom(min, max) {
-	return Math.random() * (max - min) + min;
-}
 
-var styles = ['color: red', 'background: transparent'].join(';');
-var message = 'Developed by KotoFeelGood https://api.whatsapp.com/send?phone=79615311386&text=%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%2C%20%D1%8F%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0';
-console.info('%c%s', styles, message);
 
-// const reviewsSlider = new Swiper('.reviews_slider ', {
-// 	// centeredSlides: true,
-// 	// centeredSlidesBounds: true,
-// 	allowTouchMove: true,
-// 	loop: true,
-// 	grabCursor: true,
-// 	a11y: true,
-// 	keyboard: {
-//     enabled: true,
-//     onlyInViewport: false,
-//   },
-// 	breakpoints: {
-//     320: {
-//       slidesPerView: 1,
-//       spaceBetween: 50,
-// 			freeMode: false,
-//     },
-//     480: {
-//       slidesPerView: 1,
-//       spaceBetween: 50,
-// 			freeMode: false,
-//     },
-//     640: {
-//       slidesPerView: 3,
-//       spaceBetween: 30
-//     }
-// 	}
-// });
+
 
 $(document).ready(function () {
 	const btns = document.querySelectorAll('.btn')
@@ -174,62 +135,7 @@ Array.from(btnSubmit).map((item) => {
 })
 
 
-// function allDefautAnim(bottom = false, start = '-=30% center', end = 'bottom') {
-// 	const paralaxWrapper = Array.from(document.querySelectorAll('.sec_anim')).map(function(el) {
-// 		const arr = Array.from(el.querySelectorAll('.el_anim')).map(function (item, index) {
-// 			const tl = gsap.timeline();
-// 			ScrollTrigger.create({
-// 				animation: tl,
-// 				trigger: el,
-// 				start: start,
-// 				end: end,
-// 				ease: 'none',
-// 			})
-// 			tl.fromTo(item, {
-// 				y: 100, 
-// 				duration: .4,
-// 				autoAlpha: 0,
-// 			}, {
-// 				y: 0,
-// 				autoAlpha: 1,
-// 				delay: 0.1 + (0.1 * index),
-// 			});
-// 		});
-// 	});
-// }
 
-// function popup(pr) {
-
-// 	let popupForms = document.querySelector('.popup')
-// 	let popupFormsTrigger = document.querySelectorAll('.send_form')
-// 	let popupFormsClose = document.querySelectorAll('.popupFormsClose')
-// 	let popupFormsSubmit = popupForms.querySelector('button[type="submit"]')
-// 	const burgerPopup = document.querySelector('.burger')
-
-// 	Array.from(popupFormsTrigger).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.add('active');
-// 			win.style.overflow = "hidden";
-// 			win.style.paddingRight = pr; 
-// 			burgerPopup.classList.remove('active')
-// 		})
-// 	})
-
-
-// 	Array.from(popupFormsClose).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			popupForms.classList.remove('active')
-// 			win.style.overflow = "";
-// 			win.style.paddingRight = ""; 
-// 		})
-// 	})
-
-// 	popupFormsSubmit.addEventListener('click', () => {
-// 		popupForms.classList.remove('active')
-// 		win.style.overflow = "";
-// 		win.style.paddingRight = ""; 
-// 	})
-// }
 
 function burgerMobile() {
 	const triggerBurger = document.querySelector('.burger-btn');
@@ -390,7 +296,7 @@ $(window).on("scroll", function () {
 
 const heroSlider = new Swiper('.hero_slider', {
 	allowTouchMove: true,
-	loop: true,
+	// loop: true,
 	grabCursor: true,
 	a11y: true,
 	slidesPerView: 1,
@@ -400,9 +306,13 @@ const heroSlider = new Swiper('.hero_slider', {
 		onlyInViewport: false,
 	},
 	pagination: {
-		el: '.swiper-pagination',
-	}
+		el: '.hero-pagination',
+		clickable: true,
+	},
+
 });
+
+
 
 function goToSlide(index, e) {
 	const allItems = document.querySelectorAll('.services_main ul li');
@@ -418,7 +328,7 @@ function goToSlide(index, e) {
 
 const reviewsSlider = new Swiper('.reviews_slider ', {
 	allowTouchMove: true,
-	loop: true,
+	// loop: true,
 	grabCursor: true,
 	a11y: true,
 	slidesPerView: 1,
@@ -432,7 +342,7 @@ const reviewsSlider = new Swiper('.reviews_slider ', {
 		prevEl: '.reviews_nav_prev',
 	},
 	pagination: {
-		el: '.swiper-pagination',
+		el: '.reviews-pagination',
 	}
 });
 
