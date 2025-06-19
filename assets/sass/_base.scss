@@ -53,9 +53,13 @@ body {
 .base {
 	width: 100%;
 	position: relative;
-	// padding: $header 0 0;
+	padding: $header 0 0;
 
 	flex: 1 0 auto;
+
+	@include bp($point_2) {
+		padding: 7rem 0 0;
+	}
 }
 
 a {
@@ -83,6 +87,7 @@ a {
 .section_in {
 	max-width: $page_width;
 	margin: 0 auto;
+	padding: 0 2rem;
 }
 
 //------------------------------------------------------------base styles###
@@ -96,6 +101,8 @@ a {
 	line-height: 2rem;
 	min-height: 6.4rem;
 	transition: all 0.2s ease-in-out;
+	position: relative;
+	overflow: hidden;
 
 	&.primary {
 		border: 0.2rem solid $blue;

@@ -7,9 +7,15 @@ header.header
 			nav.header_nav
 				each item in ['Главная', 'Калькулятор', 'Процесс работы', 'FAQ', 'О нас', 'Новости', 'Контакты'] 
 					a(href="#")=item
+			.header_space
 			.header_phone 
 				a(href="#")
 					.header_phone__icon 
 						img(src="/i/phone.svg")
 					p 8 495 128-78-94
-			.btn.header_btn.primary Оставить заявку
+			.btn.header_btn.primary.form_open Оставить заявку
+			.burger-btn
+				.burger-open
+					img(src="/i/burger.svg")
+				.burger-close
+					img(src="/i/burger-close.svg")

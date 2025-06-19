@@ -21,11 +21,11 @@ $(window).on('load', function () {
 	// burgerMobile();
 	scrollNav();
 	if (windowWidth > mediaPoint1) {
-		popup('14px', '.send_form', '.popup_send');
-		popup('14px', '.call_form', '.popup_call');
+		popup('14px', '.form_open', '.popup_form');
+		popup('14px', '.addservices_item', '.popup_info');
 	} else {
-		popup('0', '.send_form', '.popup_send');
-		popup('0', '.call_form', '.popup_call');
+		popup('0', '.form_open', '.popup_form');
+		popup('0', '.addservices_item', '.popup_info');
 		burgerMobile();
 	}
 });
@@ -231,29 +231,17 @@ Array.from(btnSubmit).map((item) => {
 // 	})
 // }
 
-// function burgerMobile() {
-// 	const triggerBurger = document.querySelector('.burger_trigger')
-// 	const burgerPopup = document.querySelector('.burger')
-// 	const burgerFail = document.querySelectorAll('.burger_closer')
+function burgerMobile() {
+	const triggerBurger = document.querySelector('.burger-btn');
+	const burgerPopup = document.querySelector('.burger');
 
-// 	triggerBurger.addEventListener('click', () => {
-// 		burgerPopup.classList.add('active')
-// 		win.style.overflow = "";
-// 	})
+	console.log('Good');
 
-// 	triggerBurger.addEventListener('click', () => {
-// 		burgerPopup.classList.add('active')
-// 		win.style.overflow = "";
-// 	})
-
-// 	Array.from(burgerFail).map((item) => {
-// 		item.addEventListener('click', () => {
-// 			burgerPopup.classList.remove('active')
-// 			win.style.overflow = "";
-// 		})
-// 	})
-
-// }
+	triggerBurger.addEventListener('click', () => {
+		burgerPopup.classList.toggle('active');
+		triggerBurger.classList.toggle('active');
+	});
+}
 
 // $(document).ready(function() {
 
@@ -295,35 +283,56 @@ Array.from(btnSubmit).map((item) => {
 
 // accordion('.faq_item_head', '.faq_item_content');
 
-function popup(style, btn, popups) {
+function popup(style, btnSelector, popupSelector) {
+	const triggers = document.querySelectorAll(btnSelector);
+	const popup = document.querySelector(popupSelector);
+	const closeButtons = popup.querySelectorAll('.remove');
+	const win = document.documentElement || document.body;
 
-	let trigger = document.querySelectorAll(btn);
-	let pop = document.querySelector(popups)
+	// Открытие попапа
+	triggers.forEach(trigger => {
+		trigger.addEventListener('click', () => {
+			// Закрыть все активные попапы
+			document.querySelectorAll('.popup.active').forEach(activePopup => {
+				activePopup.classList.remove('active');
+			});
 
-	let remove = pop.querySelectorAll('.remove_popup')
-
-
-
-	trigger.forEach(item => {
-		item.addEventListener('click', () => {
-			pop.classList.add('active')
-			win.style.overflow = "hidden";
+			// Открыть текущий попап
+			popup.classList.add('active');
+			win.style.overflow = 'hidden';
 			win.style.paddingRight = style;
-		})
+		});
 	});
 
-	remove.forEach(item => {
-		item.addEventListener('click', () => {
-			pop.classList.remove('active')
-			win.style.overflow = "";
-			win.style.paddingRight = "";
-		})
+	// Закрытие попапа по кнопке .remove
+	closeButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			popup.classList.remove('active');
+			clearBodyIfNoPopup();
+		});
 	});
 
+	// Закрытие по клавише ESC
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			// Закрыть текущий попап (если активен)
+			if (popup.classList.contains('active')) {
+				popup.classList.remove('active');
+				clearBodyIfNoPopup();
+			}
+		}
+	});
 
-
-
+	// Функция очистки body, если попапов не осталось
+	function clearBodyIfNoPopup() {
+		if (!document.querySelector('.popup.active')) {
+			win.style.overflow = '';
+			win.style.paddingRight = '';
+		}
+	}
 }
+
+
 $(document).ready(function () {
 
 	var inputsTel = document.querySelectorAll('input[type="tel"]');
@@ -360,27 +369,7 @@ $(window).on("scroll", function () {
 
 
 
-function burgerMobile() {
-	const burger = document.querySelector('.header_nav')
-	const burgerTrigger = document.querySelector('.header_burger')
-	const header = document.querySelector('.header')
-	const burgerRemove = document.querySelectorAll('header_nav_list li')
 
-	burgerRemove.forEach(item => {
-		item.addEventListener('click', function () {
-			burgerTrigger.classList.remove('active')
-			burger.classList.remove('active')
-			header.classList.remove('active')
-		})
-	});
-
-	burgerTrigger.addEventListener('click', () => {
-		burgerTrigger.classList.toggle('active')
-		burger.classList.toggle('active')
-		header.classList.toggle('active')
-	})
-
-}
 
 
 

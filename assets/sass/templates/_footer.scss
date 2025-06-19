@@ -55,6 +55,9 @@
 		gap: 2rem;
 		a {
 			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 }
@@ -66,6 +69,12 @@
 
 .footer_contacts__list {
 	margin-bottom: 9.7rem;
+	a {
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
 }
 
 .footer_bottom {
@@ -74,11 +83,12 @@
 	border-top: 0.2rem solid rgba(255, 255, 255, 0.589);
 	div {
 		font-weight: 500;
-		&:hover {
-			opacity: 1;
-		}
+		transition: all 0.2s ease-in-out;
 		&:not(:last-child) {
 			opacity: 0.6;
+			&:hover {
+				opacity: 1 !important;
+			}
 		}
 
 		&:last-child {
@@ -88,10 +98,18 @@
 			}
 			p {
 				opacity: 0.6;
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					opacity: 1;
+				}
 			}
 			span {
 				text-decoration: underline;
 			}
 		}
 	}
+}
+
+.footer_privacy {
+	padding-left: 8rem;
 }

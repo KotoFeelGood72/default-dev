@@ -1,6 +1,6 @@
 .popup.popup_form 
 	.popup_bg.remove
-	.close_btn
+	.close_btn.remove
 		+iconify({icon: 'ci:close-lg', width: '3rem', height: '3rem'})
 	.popup_main.popup_form__main 
 		.popup_form__img 
@@ -47,4 +47,12 @@
 				li 
 					p Преимущества автоломбарда под ПТС
 					span Одним из главных преимуществ автоломбарда под ПТС является оперативность получения денег. Клиенты могут получить нужную сумму в течение короткого времени, минуя сложные процедуры и проверки, характерные для банковских учреждений.
-			.popup_btn.btn.primary Оставить заявку
+			.popup_btn.btn.primary.form_open Оставить заявку
+
+.burger
+	.burger_bg 
+	.burger_main 
+		nav.burger_nav
+			each item in ['Главная', 'Калькулятор', 'Процесс работы', 'FAQ', 'О нас', 'Новости', 'Контакты'] 
+				a(href="#")=item
+		.popup_btn.btn.primary.form_open Оставить заявку
