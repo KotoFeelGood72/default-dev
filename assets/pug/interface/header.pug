@@ -2,11 +2,21 @@ header.header
 	.section_in 
 		.header_main 
 			.header_logo 
-				a(href="#")
+				a(href="/")
 					img(src="/i/logo.png", alt="") 
 			nav.header_nav
-				each item in ['Главная', 'Калькулятор', 'Процесс работы', 'FAQ', 'О нас', 'Новости', 'Контакты'] 
-					a(href="#")=item
+				-
+					var headerNav = [
+						{ name: 'Главная', link: '/' },
+						{ name: 'Калькулятор', link: '/#calc' },
+						{ name: 'Процесс работы', link: '/#process' },
+						{ name: 'FAQ', link: '/#faq' },
+						{ name: 'О нас', link: '/#about' },
+						{ name: 'Новости', link: '/news.html' },
+						{ name: 'Контакты', link: '/#contacts' },
+					]
+				each item in headerNav
+					a(href=item.link)=item.name
 			.header_space
 			.header_phone 
 				a(href="#")

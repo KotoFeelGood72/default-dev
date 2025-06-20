@@ -144,13 +144,17 @@ a {
 	&.secondary {
 		border: 0.2rem solid $blue;
 		color: $blue;
-		&.white {
-			border-color: $white;
-			color: $white;
-		}
 		&:hover {
 			background-color: transparent;
 			color: $black;
+		}
+		&.white {
+			border-color: $white;
+			color: $white;
+			&:hover {
+				background-color: transparent;
+				color: $white;
+			}
 		}
 	}
 }

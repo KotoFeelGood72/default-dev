@@ -60,3 +60,15 @@
 			each item in ['Главная', 'Калькулятор', 'Процесс работы', 'FAQ', 'О нас', 'Новости', 'Контакты'] 
 				a(href="#")=item
 		.popup_btn.btn.primary.form_open Оставить заявку
+
+
+.popup.popup_thanks 
+	.popup_bg.remove 
+	.popup_main.popup_thanks__main
+		.close_btn.remove.popup_thanks__close
+			+iconify({icon: 'ci:close-lg', width: '3rem', height: '3rem'})
+		.popup_thanks__img 
+			img(src="/i/popup_thanks.png")
+		.popup_thanks__content 
+			h3 Спасибо, что обратились к нам!
+			p Ваша заявка успешно отправлена. Мы свяжемся с вами в течение 5 минут, чтобы ответить на все вопросы и предложить лучшее решение.

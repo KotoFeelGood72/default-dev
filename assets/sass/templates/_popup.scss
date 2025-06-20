@@ -282,3 +282,39 @@
 		margin-bottom: 3rem;
 	}
 }
+
+.popup_thanks__main {
+	background-color: $white;
+	border-radius: 1.5rem;
+	padding: 10rem 6rem;
+	text-align: center;
+	position: relative;
+
+	max-width: 72.8rem;
+
+	@include bp($point_2) {
+		padding: 8rem 2rem;
+	}
+	@include bp($point_6) {
+		padding: 8rem 1.4rem;
+	}
+}
+
+.popup_thanks__img {
+	max-width: 32.2rem;
+	@include flex-center;
+	margin: 0 auto;
+}
+
+.popup_thanks__content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.popup_thanks__close {
+	top: 3rem;
+	right: 3rem;
+	color: $black;
+	@include flex-center;
+}
