@@ -16,8 +16,8 @@ $(document).ready(function ($) {
 
 $(window).on('load', function () {
 	updateSizes();
-	// loadFunc();
-	scrollNav();
+	toggleCalls();
+	// scrollNav();
 	if (windowWidth < mediaPoint3) {
 
 		const servicesSlider = new Swiper('.services_mobile', {
@@ -250,17 +250,17 @@ $(document).ready(function () {
 
 // https://twitter.com/uixmat
 
-function scrollNav() {
-	$('.smooth_scroll').click(function () {
-		$(".active").removeClass("active");
-		$(this).addClass("active");
+// function scrollNav() {
+// 	$('.smooth_scroll').click(function () {
+// 		$(".active").removeClass("active");
+// 		$(this).addClass("active");
 
-		$('html, body').stop().animate({
-			scrollTop: $($(this).attr('href')).offset().top - 160
-		}, 600);
-		return false;
-	});
-}
+// 		$('html, body').stop().animate({
+// 			scrollTop: $($(this).attr('href')).offset().top - 160
+// 		}, 600);
+// 		return false;
+// 	});
+// }
 
 $(window).on("scroll", function () {
 	var scrolled = $(this).scrollTop();
@@ -400,3 +400,14 @@ $(document).ready(function () {
 		$item.find('.faq_item__content').stop(true, true).slideToggle();
 	});
 });
+
+function toggleCalls() {
+	const flyBtn = document.querySelector('.fly_btn')
+	const fly = document.querySelector('.fly')
+
+	if (flyBtn && fly) {
+		flyBtn.addEventListener('click', () => {
+			fly.classList.toggle('active')
+		})
+	}
+}

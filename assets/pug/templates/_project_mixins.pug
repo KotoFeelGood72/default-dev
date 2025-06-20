@@ -54,3 +54,22 @@ mixin pageHead(color = 'white', crumbs = [])
 								a(class=txt, href=crumb.href)= crumb.text
 							else
 								span(class=txt)= crumb.text
+
+
+
+								
+mixin call
+	.fly 
+		.fly_btn 
+			img(src="/i/phone.svg")
+		ul.fly__list
+			li.fly_list__item 
+				a(href="#")
+					img(src="/i/viber.svg")  
+			li.fly_list__item 
+				a(href="#")
+					img(src="/i/telegram.svg")  
+			li.fly_list__item 
+				a(href="#")
+					img(src="/i/whats.svg")  
+

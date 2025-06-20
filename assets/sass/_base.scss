@@ -285,3 +285,46 @@ span.u-text-black {
 		}
 	}
 }
+
+.fly {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 88;
+	&.active {
+		.fly__list {
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: all;
+		}
+	}
+}
+
+.fly_btn {
+	background-color: $blue;
+	border-radius: 1rem;
+	padding: 1.8rem;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+.fly__list {
+	position: absolute;
+	bottom: 100%;
+	background-color: #e7edf4;
+	border-radius: 1rem;
+	padding: 0.3rem 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+	transform: translateY(100%);
+	pointer-events: none;
+	z-index: 1;
+	li {
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+}
