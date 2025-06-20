@@ -270,6 +270,10 @@ span.u-text-black {
 }
 
 .global-pagination {
+	@include bp($point_2, $direction: min) {
+		display: none;
+	}
+	display: block;
 	position: absolute;
 	left: 50% !important;
 	transform: translateX(-50%) !important;
