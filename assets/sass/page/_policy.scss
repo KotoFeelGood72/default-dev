@@ -3,6 +3,9 @@
 	border-radius: 1.5rem;
 	margin-bottom: 10rem;
 	padding: 4rem 4rem 4rem 3rem;
+	@include bp($point_2) {
+		padding: 3rem 1.2rem;
+	}
 }
 
 .txt_block {
@@ -12,6 +15,9 @@
 	}
 	h1 {
 		font-size: 3.8rem;
+		@include bp($point_2) {
+			font-size: 2.8rem;
+		}
 	}
 
 	p {

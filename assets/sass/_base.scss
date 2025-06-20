@@ -118,6 +118,10 @@ a {
 		font-size: 1.6rem;
 	}
 
+	a {
+		color: $white;
+	}
+
 	&.primary {
 		border: 0.2rem solid $blue;
 		background-color: $blue;
@@ -193,14 +197,28 @@ h6 {
 
 .breadcrumbs {
 	ul {
-		@include flex-start;
+		display: flex;
+		flex-wrap: nowrap; // Отключить wrap, если не нужно
 	}
+
+	li,
+	a,
 	span {
-		@include flex-center;
+		// display: inline-block;
+		// max-width: 40rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		max-width: 40rem;
+	}
+
+	span {
 		padding: 0 0.5rem;
 	}
+
 	li {
-		@include flex-start;
+		display: flex;
+		align-items: center;
 	}
 
 	&--white {
@@ -218,10 +236,17 @@ h6 {
 	padding: 4rem 4rem 9.2rem 3rem;
 	border-radius: 1.5rem;
 	margin-bottom: 6rem;
+	@include bp($point_2) {
+		padding: 3rem 1.6rem 3.5rem 1.6rem;
+		background-image: url("/i/news-bg-tablet.png");
+	}
 }
 
 .head__content {
 	padding-top: 4rem;
+	@include bp($point_2) {
+		padding-top: 3rem;
+	}
 	h1 {
 		color: $white;
 		font-size: 4.2rem;
@@ -230,6 +255,9 @@ h6 {
 	p {
 		color: $white;
 		max-width: 65.1rem;
+		@include bp($point_2) {
+			max-width: 46.3rem;
+		}
 	}
 }
 

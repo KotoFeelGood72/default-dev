@@ -336,7 +336,7 @@ block content_block
 					picture
 						source(srcset="/i/about.jpg", media='(min-width:1024px)')
 						source(srcset="/i/about1.jpg",  media='(min-width:640px)')
-						img(src="/i/about.jpg", )
+						img(src="/i/about-mobile.png", )
 					.about_action__content
 						h6 «ОК Залог» более <br/>10 лет с вами!
 						p Мы работаем без скрытых комиссий, гарантируем полную конфиденциальность и возвращаем документы в день погашения
@@ -371,7 +371,8 @@ block content_block
 			.homenews__main.mb22 
 				.homenews__head 
 					h6 Новости
-					.btn.homenews_btn.primary Оставить заявку
+					.btn.homenews_btn.primary
+						a(href="#")  Все новости
 				ul.homenews__list
 					-for(i = 0; i < 4; i++)
 						li.home_news__item

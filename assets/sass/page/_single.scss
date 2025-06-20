@@ -3,6 +3,9 @@
 	padding: 4rem 3rem 2.4rem 3rem;
 	border-radius: 1.5rem;
 	margin-bottom: 10rem;
+	@include bp($point_2) {
+		padding: 3rem 1.4rem;
+	}
 }
 
 .singlehead__content {
@@ -10,6 +13,12 @@
 		padding: 3rem 0;
 		font-size: 5.2rem;
 		max-width: 100.7rem;
+		@include bp($point_2) {
+			font-size: 3.4rem;
+		}
+		@include bp($point_6) {
+			font-size: 2.8rem;
+		}
 	}
 }
 

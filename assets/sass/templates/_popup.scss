@@ -11,6 +11,13 @@
 	visibility: hidden;
 	transition: all 0.3s ease-in-out;
 
+	@include bp($point_6) {
+		top: auto;
+		bottom: 0;
+		align-items: flex-end;
+		padding: 0;
+	}
+
 	&.active {
 		opacity: 1;
 		visibility: visible;
@@ -44,6 +51,42 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
 	gap: 4rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		padding: 6.2rem 2.5rem 2.5rem 2.5rem;
+	}
+
+	@include bp($point_6) {
+		gap: 3rem;
+	}
+
+	@include bp($point_6) {
+		padding: 7rem 1.4rem 1.4rem 1.4rem;
+	}
+
+	.close_btn {
+		@include bp($point_2) {
+			display: flex !important;
+			color: $black;
+			top: 2.5rem;
+			right: 2.5rem;
+			align-items: center;
+			justify-content: center;
+			width: 4.5rem;
+			height: 4.5rem;
+		}
+
+		@include bp($point_6) {
+			top: 1.4rem;
+			right: 1.4rem;
+			width: 4rem;
+			height: 4rem;
+		}
+	}
+
+	.gl__icon {
+		@include flex-center;
+	}
 }
 
 .popup_scroll {
@@ -52,16 +95,58 @@
 	border-radius: 1.5rem;
 	position: relative;
 	max-width: 83rem;
+	@include bp($point_2) {
+		padding-top: 7rem;
+		padding-right: 2rem;
+	}
+
+	@include bp($point_6) {
+		padding: 6rem 1.4rem 1.4rem 1.4rem;
+	}
+
+	.close_btn {
+		@include bp($point_2) {
+			display: flex !important;
+			color: $black;
+			top: 2.5rem;
+			right: 2.5rem;
+			align-items: center;
+			justify-content: center;
+			width: 4.5rem;
+			height: 4.5rem;
+		}
+		@include bp($point_6) {
+			position: absolute !important;
+			right: 1.4rem;
+			top: 1.4rem;
+		}
+	}
 }
 
 .popup_main__info {
 	max-height: 88dvh;
 	overflow-y: auto;
+	@include bp($point_2) {
+		padding-right: 1rem;
+	}
+
+	@include bp($point_2) {
+		max-height: 80dvh;
+	}
+
+	@include bp($point_6) {
+		position: relative;
+	}
+
 	h3 {
 		font-size: 3.8rem;
 		padding-bottom: 3rem;
 		margin-bottom: 3rem;
 		border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+
+		@include bp($point_2) {
+			font-size: 2.8rem;
+		}
 	}
 }
 
@@ -92,6 +177,14 @@
 	height: 51.5rem;
 	overflow: hidden;
 	border-radius: 1.5rem;
+	@include bp($point_2) {
+		order: 2;
+		height: 38.8rem;
+	}
+
+	@include bp($point_6) {
+		height: auto;
+	}
 	img {
 		object-fit: cover;
 	}
@@ -105,6 +198,9 @@
 	height: 5rem;
 	color: $white;
 	cursor: pointer;
+	@include bp($point_2) {
+		display: none;
+	}
 }
 
 .popup_info__list {
@@ -112,6 +208,10 @@
 	flex-direction: column;
 	gap: 3rem;
 	margin-bottom: 4rem;
+	@include bp($point_2) {
+		gap: 2rem;
+	}
+
 	li {
 		&:not(:last-child) {
 			border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
@@ -121,6 +221,9 @@
 			font-size: 2.4rem;
 			font-weight: 700;
 			margin-bottom: 1.5rem;
+			@include bp($point_2) {
+				font-size: 2.2rem;
+			}
 		}
 	}
 }
@@ -161,6 +264,9 @@
 	border-bottom: 0.1rem solid $blue;
 	transform: translateY(5rem);
 	transition: all 0.3s ease-in-out;
+	@include bp($point_6) {
+		padding: 9.5rem 2rem 2rem 2rem;
+	}
 }
 
 .burger_nav {
@@ -172,4 +278,7 @@
 	gap: 3rem 6rem;
 	max-width: 26.8rem;
 	margin-bottom: 6rem;
+	@include bp($point_6) {
+		margin-bottom: 3rem;
+	}
 }

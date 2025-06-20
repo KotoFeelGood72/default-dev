@@ -651,23 +651,25 @@
 
 .require__list .swiper-wrapper {
 	@include bp($point_2, $direction: min) {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+		display: grid !important;
+		grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)) !important;
 		grid-gap: 2rem;
 	}
 	@include bp($point_2) {
-		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+		display: grid !important;
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr)) !important;
 		gap: 1rem;
 	}
 
 	@include bp($point_6) {
+		display: flex !important;
 		gap: 0;
 	}
 
 	li {
 		&:last-child {
 			@include bp($point_2) {
-				grid-column: 1 / -1;
+				grid-column: 1 / -1 !important;
 			}
 		}
 	}
@@ -1075,6 +1077,10 @@
 	@include bp($point_2) {
 		min-height: 45rem;
 	}
+	@include bp($point_6) {
+		min-height: 49.6rem;
+		padding: 3rem 1.2rem 1.2rem 1.2rem;
+	}
 	h6,
 	p {
 		max-width: 42.4rem;
@@ -1099,6 +1105,26 @@
 .homenews__head {
 	@include flex-space;
 	margin-bottom: 3.4rem;
+	@include bp($point_6) {
+		margin-bottom: 3rem;
+	}
+}
+
+.homenews_btn {
+	@include bp($point_6) {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+	}
+}
+
+.homenews__main {
+	@include bp($point_6) {
+		position: relative;
+		padding-bottom: 7rem;
+	}
 }
 
 .homenews__list {
@@ -1109,10 +1135,18 @@
 		grid-gap: 1rem;
 		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
 	}
+	@include bp($point_6) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
 
 	li {
 		&:nth-child(n + 3) {
 			@include bp($point_2) {
+				display: none;
+			}
+		}
+		&:nth-child(n + 2) {
+			@include bp($point_6) {
 				display: none;
 			}
 		}
@@ -1214,6 +1248,11 @@
 		height: 46.3rem;
 		padding: 2rem;
 	}
+
+	@include bp($point_6) {
+		height: 45.3rem;
+		padding: 1.2rem;
+	}
 }
 
 .map__card {
@@ -1223,10 +1262,17 @@
 	border-radius: 1.5rem;
 	background-color: $white;
 	position: absolute;
+	pointer-events: none;
 	@include bp($point_2) {
 		top: 3rem;
 		left: 3rem;
 		padding: 2rem 6rem 2rem 2rem;
+	}
+
+	@include bp($point_6) {
+		top: auto;
+		bottom: 2rem;
+		left: 2rem;
 	}
 }
 
@@ -1241,6 +1287,10 @@
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 		gap: 0.8rem;
 		padding: 3rem 2.5rem;
+	}
+
+	@include bp($point_6) {
+		padding: 3rem 1.4rem 1.4rem 2rem;
 	}
 }
 
@@ -1305,5 +1355,13 @@
 	position: relative;
 	@include bp($point_2) {
 		padding-bottom: 5rem !important;
+	}
+}
+
+.fform {
+	.section_in {
+		@include bp($point_6) {
+			padding: 0;
+		}
 	}
 }

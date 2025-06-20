@@ -2,6 +2,9 @@
 	@include flex-start;
 	gap: 1rem;
 	margin-bottom: 2rem;
+	@include bp($point_2) {
+		flex-wrap: wrap;
+	}
 	li {
 		a {
 			background-color: $white;
@@ -23,4 +26,8 @@
 	grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 	grid-gap: 2rem;
 	margin-bottom: 15rem;
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+		margin-bottom: 11rem;
+	}
 }

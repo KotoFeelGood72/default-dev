@@ -41,17 +41,16 @@ mixin pageHead(color = 'white', crumbs = [])
 		const brd  = color === 'black' ? 'breadcrumbs--black': 'breadcrumbs--white'
 		const back = color === 'black' ? 'page-head--light'  : 'page-head--blue'
 	.page-head(class=back)
-		.section_in
-			if crumbs.length
-				nav.breadcrumbs(class=brd)
-					ul
-						each crumb, i in crumbs
-							li
-								if i
-									span.dot &bull;
-								if typeof crumb === 'string'
-									span(class=txt)= crumb
-								else if crumb.href
-									a(class=txt, href=crumb.href)= crumb.text
-								else
-									span(class=txt)= crumb.text
+		if crumbs.length
+			nav.breadcrumbs(class=brd)
+				ul
+					each crumb, i in crumbs
+						li
+							if i
+								span.dot &bull;
+							if typeof crumb === 'string'
+								span(class=txt)= crumb
+							else if crumb.href
+								a(class=txt, href=crumb.href)= crumb.text
+							else
+								span(class=txt)= crumb.text
