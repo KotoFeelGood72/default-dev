@@ -348,49 +348,76 @@ const reviewsSlider = new Swiper('.reviews_slider ', {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+	/* ---------- элементы ---------- */
 	const hidden = document.getElementById('loanRange');
 	const slider = document.querySelector('.calculator__slider');
 	const track = slider.querySelector('.slider__track');
 	const fill = slider.querySelector('.slider__progress');
 	const out = document.getElementById('loanValue');
 
+	const radios = document.querySelectorAll('.calculator__months__select input[type="radio"]');
+	const payOut = document.getElementById('paymentOut');
+
+	/* ---------- настройки ---------- */
 	const min = +hidden.min;
 	const max = +hidden.max;
 	const step = +hidden.step || 1;
+	const mRate = 0.015; // 1,5 % в месяц  (= 18 % годовых)
 
 	const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+
 	const valueToPercent = v => ((v - min) * 100) / (max - min);
 	const percentToValue = p => Math.round((min + p * (max - min) / 100) / step) * step;
-	const R = 12;
 
+	/* ---------- расчёт платежа ---------- */
+	function calcPayment(sum, months) {
+		/* аннуитетная формула: P = S*r / (1 - (1+r)^-n) */
+		const r = mRate;
+		const k = r / (1 - Math.pow(1 + r, -months));
+		return Math.round(sum * k);
+	}
+
+	/* ---------- отрисовка суммы и платежа ---------- */
 	function render(val) {
 		const pct = valueToPercent(val);
-		fill.style.width = `calc(${pct}% - ${R}px)`;
+		fill.style.width = `calc(${pct}% - 12px)`;
 		out.textContent = fmt(val);
 		hidden.value = val;
-	}
-	render(+hidden.value || +slider.dataset.initial || min);
-	let dragging = false;
 
-	function move(e) {
+		const months = +document.querySelector('.calculator__months__select input:checked')?.value || 12;
+		payOut.textContent = fmt(calcPayment(val, months));
+	}
+
+	/* ---------- стартовое состояние ---------- */
+	render(+hidden.value || +slider.dataset.initial || min);
+
+	/* ---------- движение ползунка ---------- */
+	const move = e => {
 		const rect = track.getBoundingClientRect();
 		let pct = ((e.clientX - rect.left) / rect.width) * 100;
 		pct = Math.max(0, Math.min(100, pct));
 		render(percentToValue(pct));
-	}
+	};
 
 	slider.addEventListener('pointerdown', e => {
-		dragging = true;
 		move(e);
-		document.addEventListener('pointermove', move);
-		document.addEventListener('pointerup', () => {
-			dragging = false;
-			document.removeEventListener('pointermove', move);
-		}, {
+		const onMove = e => move(e);
+		const onUp = () => {
+			document.removeEventListener('pointermove', onMove);
+			document.removeEventListener('pointerup', onUp);
+		};
+		document.addEventListener('pointermove', onMove);
+		document.addEventListener('pointerup', onUp, {
 			once: true
 		});
 	});
+
+	/* ---------- переключение срока ---------- */
+	radios.forEach(radio =>
+		radio.addEventListener('change', () => render(+hidden.value))
+	);
 });
+
 
 $(document).ready(function () {
 	$('.faq_item__head').on('click', function () {

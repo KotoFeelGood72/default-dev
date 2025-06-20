@@ -131,16 +131,16 @@ block content_block
 						.calculator__months 
 							p Срок займа(месяцев):
 							ul.calculator__months__select
-								each item in ['12', '18', '24', '36']
+								each item, i in ['12', '18', '24', '36']
 									li 
-										input(type="radio", name="datetime" id=item + 'date')
+										input(type="radio", name="datetime" id=item + 'date' checked=i === 0 value=item)
 										label(for=item + 'date')=item
 					.calculator__forms 
 						h3 Ежемесячный платеж
 						.calculator_forms__qty 
 							.calculator_forms__qty__minus
 								+iconify({icon:'ic:baseline-minus'})
-							.calculator_forms__qty__input 210 000 ₽
+							.calculator_forms__qty__input#paymentOut 210 000 ₽
 							.calculator_forms__qty__plus
 								+iconify({icon: 'ic:baseline-plus'})
 						.calculator_forms__col 
