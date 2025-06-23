@@ -1,31 +1,23 @@
 header.header 
 	.section_in 
-		.header_main 
-			.header_logo 
-				a(href="/")
-					img(src="/i/logo.png", alt="") 
-			nav.header_nav
-				-
-					var headerNav = [
-						{ name: 'Главная', link: '/' },
-						{ name: 'Калькулятор', link: '/#calc' },
-						{ name: 'Процесс работы', link: '/#process' },
-						{ name: 'FAQ', link: '/#faq' },
-						{ name: 'О нас', link: '/#about' },
-						{ name: 'Новости', link: '/news.html' },
-						{ name: 'Контакты', link: '/#contacts' },
-					]
-				each item in headerNav
-					a(href=item.link)=item.name
-			.header_space
-			.header_phone 
-				a(href="#")
-					.header_phone__icon 
-						img(src="/i/phone.svg")
-					p 8 495 128-78-94
-			.btn.header_btn.primary.form_open Оставить заявку
-			.burger-btn
-				.burger-open
-					img(src="/i/burger.svg")
-				.burger-close
-					img(src="/i/burger-close.svg")
+		.header_main
+			.header_col__left
+				.header_logo 
+					a(href="/")
+						img(src="/i/logo.svg", alt="Логотип компании")
+				nav.header_nav 
+					-
+						var navigation = [
+							{title: 'О Компании', link: '/'},
+							{title: 'Продукты', link: '/'},
+							{title: 'Документация ПО', link: '/'},
+							{title: 'Блог', link: '/'},
+							{title: 'Карьера', link: '/'},
+						]
+					ul
+						each item in navigation
+							li 
+								a(href=item.link)=item.title
+			.header_col__right 
+				+social-list([{link: '/', icon: 'telegram'}, {link: '/', icon: 'vk'}])
+				+btn({ text: 'Консультация', className: 'primary-btn' })

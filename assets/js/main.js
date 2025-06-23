@@ -16,49 +16,14 @@ $(document).ready(function ($) {
 
 $(window).on('load', function () {
 	updateSizes();
-	toggleCalls();
-	// scrollNav();
-	if (windowWidth < mediaPoint3) {
-
-		const servicesSlider = new Swiper('.services_mobile', {
-			allowTouchMove: true,
-			// loop: true,
-			grabCursor: true,
-			a11y: true,
-			slidesPerView: 1,
-			spaceBetween: 30,
-			keyboard: {
-				enabled: true,
-				onlyInViewport: false,
-			},
-			pagination: {
-				el: '.services-pagination',
-			}
-		});
-		const requireSlider = new Swiper('.require__list ', {
-			allowTouchMove: true,
-			// loop: true,
-			grabCursor: true,
-			a11y: true,
-			slidesPerView: 1,
-			spaceBetween: 30,
-			keyboard: {
-				enabled: true,
-				onlyInViewport: false,
-			},
-			pagination: {
-				el: '.require-pagination',
-			}
-		});
-	}
-	if (windowWidth > mediaPoint1) {
-		popup('14px', '.form_open', '.popup_form');
-		popup('14px', '.addservices_item', '.popup_info');
-	} else {
-		popup('0', '.form_open', '.popup_form');
-		popup('0', '.addservices_item', '.popup_info');
-		burgerMobile();
-	}
+	// popup('14px', '.form_open', '.popup_form');
+	// popup('14px', '.addservices_item', '.popup_info');
+	// if (windowWidth > mediaPoint1) {
+	// } else {
+	// 	popup('0', '.form_open', '.popup_form');
+	// 	popup('0', '.addservices_item', '.popup_info');
+	// 	burgerMobile();
+	// }
 });
 
 $(window).on('resize', function () {
@@ -126,13 +91,6 @@ $(document).ready(function () {
 
 
 
-const btnSubmit = document.querySelectorAll('input[type="submit"]')
-Array.from(btnSubmit).map((item) => {
-	item.addEventListener('click', (e) => {
-		e.preventDefault();
-		close('.close')
-	})
-})
 
 
 
@@ -294,34 +252,26 @@ $(window).on("scroll", function () {
 
 
 
-const heroSlider = new Swiper('.hero_slider', {
-	allowTouchMove: true,
-	// loop: true,
-	grabCursor: true,
-	a11y: true,
-	slidesPerView: 1,
-	spaceBetween: 30,
-	keyboard: {
-		enabled: true,
-		onlyInViewport: false,
-	},
-	pagination: {
-		el: '.hero-pagination',
-		clickable: true,
-	},
+// const heroSlider = new Swiper('.hero_slider', {
+// 	allowTouchMove: true,
+// 	// loop: true,
+// 	grabCursor: true,
+// 	a11y: true,
+// 	slidesPerView: 1,
+// 	spaceBetween: 30,
+// 	keyboard: {
+// 		enabled: true,
+// 		onlyInViewport: false,
+// 	},
+// 	pagination: {
+// 		el: '.hero-pagination',
+// 		clickable: true,
+// 	},
 
-});
+// });
 
 
 
-function goToSlide(index, e) {
-	const allItems = document.querySelectorAll('.services_main ul li');
-	allItems.forEach(item => item.classList.remove('active'));
-	e.currentTarget.classList.add('active');
-	if (heroSlider && typeof index === 'number') {
-		heroSlider.slideToLoop(index);
-	}
-}
 
 
 
@@ -347,94 +297,13 @@ const reviewsSlider = new Swiper('.reviews_slider ', {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-	/* ---------- элементы ---------- */
-	const hidden = document.getElementById('loanRange');
-	const slider = document.querySelector('.calculator__slider');
-	const track = slider.querySelector('.slider__track');
-	const fill = slider.querySelector('.slider__progress');
-	const out = document.getElementById('loanValue');
-
-	const radios = document.querySelectorAll('.calculator__months__select input[type="radio"]');
-	const payOut = document.getElementById('paymentOut');
-
-	/* ---------- настройки ---------- */
-	const min = +hidden.min;
-	const max = +hidden.max;
-	const step = +hidden.step || 1;
-	const mRate = 0.015; // 1,5 % в месяц  (= 18 % годовых)
-
-	const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
-
-	const valueToPercent = v => ((v - min) * 100) / (max - min);
-	const percentToValue = p => Math.round((min + p * (max - min) / 100) / step) * step;
-
-	/* ---------- расчёт платежа ---------- */
-	function calcPayment(sum, months) {
-		/* аннуитетная формула: P = S*r / (1 - (1+r)^-n) */
-		const r = mRate;
-		const k = r / (1 - Math.pow(1 + r, -months));
-		return Math.round(sum * k);
-	}
-
-	/* ---------- отрисовка суммы и платежа ---------- */
-	function render(val) {
-		const pct = valueToPercent(val);
-		fill.style.width = `calc(${pct}% - 12px)`;
-		out.textContent = fmt(val);
-		hidden.value = val;
-
-		const months = +document.querySelector('.calculator__months__select input:checked')?.value || 12;
-		payOut.textContent = fmt(calcPayment(val, months));
-	}
-
-	/* ---------- стартовое состояние ---------- */
-	render(+hidden.value || +slider.dataset.initial || min);
-
-	/* ---------- движение ползунка ---------- */
-	const move = e => {
-		const rect = track.getBoundingClientRect();
-		let pct = ((e.clientX - rect.left) / rect.width) * 100;
-		pct = Math.max(0, Math.min(100, pct));
-		render(percentToValue(pct));
-	};
-
-	slider.addEventListener('pointerdown', e => {
-		move(e);
-		const onMove = e => move(e);
-		const onUp = () => {
-			document.removeEventListener('pointermove', onMove);
-			document.removeEventListener('pointerup', onUp);
-		};
-		document.addEventListener('pointermove', onMove);
-		document.addEventListener('pointerup', onUp, {
-			once: true
-		});
-	});
-
-	/* ---------- переключение срока ---------- */
-	radios.forEach(radio =>
-		radio.addEventListener('change', () => render(+hidden.value))
-	);
-});
 
 
-$(document).ready(function () {
-	$('.faq_item__head').on('click', function () {
-		const $item = $(this).closest('.faq_item');
-		$('.faq_item').not($item).removeClass('active').find('.faq_item__content').slideUp();
-		$item.toggleClass('active');
-		$item.find('.faq_item__content').stop(true, true).slideToggle();
-	});
-});
-
-function toggleCalls() {
-	const flyBtn = document.querySelector('.fly_btn')
-	const fly = document.querySelector('.fly')
-
-	if (flyBtn && fly) {
-		flyBtn.addEventListener('click', () => {
-			fly.classList.toggle('active')
-		})
-	}
-}
+// $(document).ready(function () {
+// 	$('.faq_item__head').on('click', function () {
+// 		const $item = $(this).closest('.faq_item');
+// 		$('.faq_item').not($item).removeClass('active').find('.faq_item__content').slideUp();
+// 		$item.toggleClass('active');
+// 		$item.find('.faq_item__content').stop(true, true).slideToggle();
+// 	});
+// });

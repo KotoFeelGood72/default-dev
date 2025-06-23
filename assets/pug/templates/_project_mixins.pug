@@ -5,71 +5,22 @@ mixin input(data)
 
 
 
+mixin social-list(socials)
+	ul.socials-list
+		each item in socials
+			li.social_list__item 
+				a(href=item.link)
+					img(src=`/i/socials/${item.icon}.svg`, alt=`Ruver ${item.icon}`)
 
 
-mixin iconify(data)
-	.gl__icon 
-		span(class="iconify" data-icon=data.icon data-inline=data.inline ? data.inline : false data-width=data.width ? data.width : "2.4rem" data-height=data.height ? data.height : "2.4rem")
-
-mixin customSelect(data)
-	.custom-select(data-multiple=data.multiple)
-		label(for=data.id)!= data.label
-		input.custom-select-input(id=data.id type="text" readonly placeholder=data.placeholder value=data.multiple ? "Выбрано: 0" : "Выберите значение")
-		ul.custom-select-dropdown
-			each option in data.options
-				li.custom-select-option(data-value=option)!= option
-
-mixin news
-	.newsCard 
-		.newsCard__cat
-			a(href="#") Новости компании
-		h3 «OK Залог» запускает новые условия по займам под ПТС: быстрые деньги без потери автомобиля
-		.newsCard_bottom 
-			.newsCard__date!='<span>23</span> мая 2025'
-			.newsCard__link 
-				a(href="/single.html")
-					+iconify({icon: 'prime:arrow-right', width: '4rem', height: '4rem',})
-
-
-
-
-
-
-mixin pageHead(color = 'white', crumbs = [])
-	-                         
-		const txt  = color === 'black' ? 'u-text-black'      : 'u-text-white'
-		const brd  = color === 'black' ? 'breadcrumbs--black': 'breadcrumbs--white'
-		const back = color === 'black' ? 'page-head--light'  : 'page-head--blue'
-	.page-head(class=back)
-		if crumbs.length
-			nav.breadcrumbs(class=brd)
-				ul
-					each crumb, i in crumbs
-						li
-							if i
-								span.dot &bull;
-							if typeof crumb === 'string'
-								span(class=txt)= crumb
-							else if crumb.href
-								a(class=txt, href=crumb.href)= crumb.text
-							else
-								span(class=txt)= crumb.text
-
-
-
-								
-mixin call
-	.fly 
-		.fly_btn 
-			img(src="/i/phone.svg")
-		ul.fly__list
-			li.fly_list__item 
-				a(href="#")
-					img(src="/i/viber.svg")  
-			li.fly_list__item 
-				a(href="#")
-					img(src="/i/telegram.svg")  
-			li.fly_list__item 
-				a(href="#")
-					img(src="/i/whats.svg")  
-
+mixin btn({ text, href, isLoading = false, className = '' })
+	if href
+		a.global-btn(class=className href=href)
+			if isLoading
+				span.loader
+			| #{text}
+	else
+		button.global-btn(type="button" class=className disabled=isLoading)
+			if isLoading
+				span.loader
+			| #{text}
