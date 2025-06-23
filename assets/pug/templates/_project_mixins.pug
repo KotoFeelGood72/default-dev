@@ -24,3 +24,11 @@ mixin btn({ text, href, isLoading = false, className = '' })
 			if isLoading
 				span.loader
 			| #{text}
+
+
+mixin sixstep(data)
+	li.sixstep_item 
+		.sixstep_item__num.text-red.h1=data.num
+		.sixstep_item__content 
+			p=data.title
+			span=data.text
