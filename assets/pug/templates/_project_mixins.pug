@@ -32,3 +32,33 @@ mixin sixstep(data)
 		.sixstep_item__content 
 			p=data.title
 			span=data.text
+
+
+mixin licence(data)
+	.licenceCard 
+		.licence_fly=data.fly
+		.licence_decor 
+			img(src="/i/licence-card.png")
+		.licence_content 
+			h3.h3=data.title
+			.licence_content__text=data.text
+
+
+mixin partners(short = false)
+	- const total = 24;
+	- const visible = short ? 12 : total;
+
+	section.partners
+		.section_in
+			.partners_main
+				ul.partners__list
+					- for (let i = 1; i <= visible; i++)
+						li.partners__item
+							a(href="/")
+								img(src=`/i/partners/par-${i}.png`, alt=`Партнер ${i}`)
+				
+				// Кнопка "Все партнеры"
+				if short
+					.partners__more
+						a.btn(href="/partners") Все партнеры →
+
