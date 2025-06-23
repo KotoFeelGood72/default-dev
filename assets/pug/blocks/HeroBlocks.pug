@@ -1,0 +1,24 @@
+section.hero 
+	.section_in 
+		.hero_main 
+			.hero_content 
+				p.text-red ПО внесено в реестр Минцифры
+				h1.h1 РУВЕР — Безопасное ПО для камер видеонаблюдения
+				span Первое отечественное ПО для управления камерами видеонаблюдения без уязвимостей, с сертификацией и интеграцией в системы безопасности
+				+btn({ text: 'Консультация', className: 'primary red' })
+			.hero_img__group
+				.hero_img__square
+					picture
+						source(srcset="/i/hero-square.png", media='(min-width:1024px)')
+						source(srcset="/i/hero-square.png",  media='(min-width:640px)')
+						img(src="/i/hero-square.png", )
+				.hero_img__camera
+					.hero_img__camera__gos 
+						p Программное обеспечение лицензировано и поддерживается
+						.hero_img__camera__gos__img 
+							img(src="/i/gos.png", alt="Программное обеспечение лицензировано и поддерживается")
+					.hero_img__camera__img
+						picture
+							source(srcset="/i/hero-camera.png", media='(min-width:1024px)')
+							source(srcset="/i/hero-camera.png",  media='(min-width:640px)')
+							img(src="/i/hero-camera.png", )

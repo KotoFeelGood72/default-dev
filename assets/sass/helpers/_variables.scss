@@ -12,28 +12,23 @@ $font_path: "../fonts/";
 $font_1: "Inter", sans-serif;
 
 $font_size_base: 1.6rem;
+
 //---------------------------------------------fonts###
 
 //---------------------------------------------colors
 $white: #fff;
 $black: #000;
 
-$darkgrey: #555555;
-$pink: #ff0956;
-$blue: #2364d0;
-$yellow: #f5e084;
+$red: #ba0000;
+$lightGrey: #f2f2f2;
+$darkGrey: #d8d8d8;
+$titleDark: #343434;
+$textDark: #515151;
+$background: #fcfcfc;
 
-$darker: #030a1b;
-$dark: #1c202c;
-
-$mediumBlue: #b7d8ff;
-$lightblue: #f3f9ff;
-
-$grey: #787c89;
-
-$color_text_base: $dark;
-$color_link_base: $dark;
-$body_bg: $white;
+$color_text_base: $textDark;
+$color_link_base: $textDark;
+$body_bg: $background;
 //---------------------------------------------colors###
 
 //---------------------------------------------z-index
