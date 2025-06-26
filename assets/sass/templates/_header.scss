@@ -9,8 +9,20 @@
 	z-index: 96; // padding: 2rem 0;
 	@include flex-space;
 	background-color: #e7edf4;
+	transition: all 0.3s ease-in-out;
 	@include bp($point_2) {
 		height: 7rem;
+	}
+
+	&.fixed {
+		backdrop-filter: blur(1rem);
+		background-color: #e7edf438;
+
+		.header_logo,
+		.header_nav,
+		.header_phone a {
+			background-color: rgba(255, 255, 255, 0.637);
+		}
 	}
 }
 
