@@ -747,6 +747,10 @@
 	}
 	li {
 		counter-increment: list-counter;
+		font-size: 2rem;
+		@include bp($point_2) {
+			font-size: 1.6rem;
+		}
 		&:before {
 			content: counter(list-counter) ".";
 			padding-right: 0.5rem;
