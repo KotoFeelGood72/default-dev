@@ -317,7 +317,6 @@ const heroSlider = new Swiper('.hero_slider', {
 });
 
 
-
 function goToSlide(index, e) {
 	const allItems = document.querySelectorAll('.services_main ul li');
 	allItems.forEach(item => item.classList.remove('active'));
@@ -326,6 +325,14 @@ function goToSlide(index, e) {
 		heroSlider.slideToLoop(index);
 	}
 }
+
+// Добавить активный класс первому элементу при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+	const firstItem = document.querySelector('.services_main ul li');
+	if (firstItem) {
+		firstItem.classList.add('active');
+	}
+});
 
 
 
@@ -442,3 +449,59 @@ function toggleCalls() {
 		})
 	}
 }
+
+const phrases = [
+	"Без справок о доходах",
+	"Решение за 15 минут",
+	"На 15% выгоднее банка",
+	"127 человек подали заявку сегодня",
+	"Займ под залог авто",
+	"Одобрение без поручителей",
+	"Низкая процентная ставка",
+	"Без скрытых комиссий",
+	"Поддержка 24/7",
+	"Подача онлайн за 2 минуты",
+	"Работаем по всей стране",
+	"Гарантия безопасности сделки",
+	"Заем до 5 000 000 ₽",
+	"Не влияет на кредитную историю",
+	"Заем под ПТС без изъятия"
+];
+
+const container = document.getElementById("animated-list");
+const itemsToShow = 4;
+let currentIndex = 0;
+
+function createListItems(startIndex) {
+	const items = [];
+
+	for (let i = 0; i < itemsToShow; i++) {
+		const index = (startIndex + i) % phrases.length;
+
+		const li = document.createElement("li");
+		li.className = "animated-item fade-in";
+
+		li.innerHTML = `
+        <div class="gl__icon"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="3.5rem" height="3.5rem" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"></path>
+          </svg>
+        </div>
+        <p>${phrases[index]}</p>
+      `;
+		items.push(li);
+	}
+
+	return items;
+}
+
+function updateList() {
+	container.innerHTML = "";
+	const newItems = createListItems(currentIndex);
+	newItems.forEach(item => container.appendChild(item));
+
+	currentIndex = (currentIndex + itemsToShow) % phrases.length;
+}
+
+updateList();
+setInterval(updateList, 4000); // каждые 4 секунды

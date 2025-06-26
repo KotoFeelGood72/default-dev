@@ -110,6 +110,13 @@
 			gap: 1rem;
 			min-height: 25rem;
 			position: relative;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				// transform: translateY(-1rem);
+				box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.062);
+				color: $blue;
+			}
 			@include bp($point_2) {
 				min-height: 23.6rem;
 			}
@@ -374,6 +381,9 @@
 			border-radius: 1rem;
 			cursor: pointer;
 			transition: all 0.2s ease-in-out;
+			&:hover {
+				background-color: $lightblue;
+			}
 			@include bp($point_2) {
 				padding: 2rem 2.3rem;
 				font-size: 1.6rem;
@@ -475,8 +485,8 @@
 .calculator__bottom {
 	ul {
 		@include flex-start;
-		gap: 6rem;
-		flex-wrap: wrap;
+		gap: 2rem;
+		// flex-wrap: wrap;
 
 		@include bp($point_2) {
 			display: grid;
@@ -496,6 +506,7 @@
 			padding: 1.5rem 2rem;
 			flex-grow: 1;
 			font-size: 1.8rem;
+			transition: all 0.3s ease-in-out;
 			@include bp($point_2) {
 				height: 100%;
 				font-size: 2rem;
@@ -763,6 +774,14 @@
 		background-color: $white;
 		border-radius: 1rem;
 		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			background-color: $blue;
+			color: $white;
+			.gl__icon {
+				color: $white;
+			}
+		}
 		.gl__icon {
 			@include flex-center;
 			color: $blue;
@@ -886,6 +905,10 @@
 	border-radius: 1.5rem;
 	transition: all 0.2s ease-in-out;
 	user-select: none;
+	&:hover {
+		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.062);
+		transform: translateY(-0.3rem);
+	}
 
 	@include bp($point_2) {
 		padding: 1rem 2rem;
@@ -1014,6 +1037,13 @@
 	}
 }
 
+.addservices_item {
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.062);
+		transform: translateY(-1rem);
+	}
+}
 .about {
 	h6 {
 		margin-bottom: 4rem;
@@ -1376,6 +1406,16 @@
 }
 
 .services_mobile {
+	&.swiper {
+		@include bp($point_2, $direction: min) {
+			overflow: visible;
+		}
+	}
+	.swiper-wrapper {
+		@include bp($point_2, $direction: min) {
+			overflow: visible;
+		}
+	}
 	@include bp($point_6) {
 		padding-bottom: 5rem !important;
 	}
@@ -1394,4 +1434,32 @@
 			padding: 0;
 		}
 	}
+}
+
+.animated-item {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: all 0.5s ease-in-out;
+}
+
+.fade-in {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+#animated-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#animated-list li {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.gl__icon {
+	flex-shrink: 0;
 }

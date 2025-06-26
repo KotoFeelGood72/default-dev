@@ -126,6 +126,10 @@ a {
 		border: 0.2rem solid $blue;
 		background-color: $blue;
 		color: $white;
+		&:hover {
+			background-color: $white;
+			color: $blue;
+		}
 
 		&.white {
 			background-color: $white;
@@ -133,11 +137,11 @@ a {
 			&.border-none {
 				border: none;
 			}
-		}
-		&:hover {
-			// background-color: transparent;
-			// color: $black;
-			&.white {
+
+			&:hover {
+				background-color: $blue;
+				color: $white;
+				border-color: $white;
 			}
 		}
 	}
@@ -162,9 +166,16 @@ a {
 .global_input {
 	@include app;
 	background-color: #efefef;
+	border: 0.1rem solid #efefef;
 	padding: 2rem 2.5rem;
 	border-radius: 1.5rem;
 	font-size: 1.8rem;
+	transition: all 0.3s ease-in-out;
+
+	&:focus {
+		outline: none;
+		border-color: $blue;
+	}
 
 	@include bp($point_2) {
 		font-size: 1.6rem;
@@ -311,6 +322,11 @@ span.u-text-black {
 	cursor: pointer;
 	position: relative;
 	z-index: 2;
+	box-shadow: 0 0 2rem 0 #00000042;
+	transition: all 0.3s ease-in-out;
+	&:hover {
+		transform: scale(1.1);
+	}
 }
 
 .fly__list {

@@ -159,7 +159,7 @@ block content_block
 								p Я даю согласие на обработку персональных данных
 						.btn.calc_btn.primary Оставить заявку
 				.calculator__bottom 
-					ul
+					ul#animated-list
 						each item in ['Без справок о доходах', 'Решение за 15 минут', 'На 15% выгоднее банка', '127 человек подали заявку сегодня']
 							li
 								+iconify({icon: 'material-symbols:check-rounded', width: '3.5rem', height: '3.5rem'})
@@ -345,7 +345,7 @@ block content_block
 					.about_action__content
 						h6 «ОК Залог» более <br/>10 лет с вами!
 						p Мы работаем без скрытых комиссий, гарантируем полную конфиденциальность и возвращаем документы в день погашения
-						.btn.about_btn.primary.white.border-none.form_open Оставить заявку
+						.btn.about_btn.primary.white.form_open Оставить заявку
 				.about_list 
 					.about_item 
 						.about_item__img 
