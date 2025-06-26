@@ -1,3 +1,6 @@
+.hero_main {
+	position: relative;
+}
 .hero_slide {
 	position: relative;
 	min-height: 53.9rem;
@@ -315,6 +318,28 @@
 			width: 3.6rem;
 			height: 3.6rem;
 		}
+	}
+}
+
+.hero__nav {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	@include flex-space;
+	z-index: 22;
+	pointer-events: none;
+	width: 106%;
+	div {
+		pointer-events: all;
+		background-color: $white;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 1rem;
+		@include flex-center;
+		box-shadow: 0 0 2rem 0 #0000001a;
+		cursor: pointer;
 	}
 }
 

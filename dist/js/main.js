@@ -309,6 +309,10 @@ const heroSlider = new Swiper('.hero_slider', {
 		el: '.hero-pagination',
 		clickable: true,
 	},
+	navigation: {
+		nextEl: '.hero_nav_next',
+		prevEl: '.hero_nav_prev',
+	},
 
 });
 
@@ -354,7 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	const track = slider.querySelector('.slider__track');
 	const fill = slider.querySelector('.slider__progress');
 	const out = document.getElementById('loanValue');
-	const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 	const radios = document.querySelectorAll('.calculator__months__select input[type="radio"]');
 	const payOut = document.getElementById('paymentOut');
@@ -362,8 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	/* ---------- настройки ---------- */
 	const min = +hidden.min;
 	const max = +hidden.max;
-	const step = isMobile ? 50000 : (+hidden.step || 10000);
-
+	const step = +hidden.step || 1;
 	const mRate = 0.015; // 1,5 % в месяц  (= 18 % годовых)
 
 	const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
@@ -402,22 +404,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	slider.addEventListener('pointerdown', e => {
-		e.preventDefault(); // важно для мобильных устройств
-
+		move(e);
 		const onMove = e => move(e);
 		const onUp = () => {
 			document.removeEventListener('pointermove', onMove);
 			document.removeEventListener('pointerup', onUp);
-			document.removeEventListener('pointercancel', onUp); // важно для тач-сценариев
 		};
-
-		move(e); // сразу реагируем на начальное касание
-
 		document.addEventListener('pointermove', onMove);
-		document.addEventListener('pointerup', onUp);
-		document.addEventListener('pointercancel', onUp); // для отмен событий на мобилках
+		document.addEventListener('pointerup', onUp, {
+			once: true
+		});
 	});
-
 
 	/* ---------- переключение срока ---------- */
 	radios.forEach(radio =>

@@ -51,6 +51,11 @@ block content_block
 	section.hero
 		.section_in
 			.hero_main
+				.hero__nav 
+					.hero_nav_prev 
+						+iconify({icon: 'prime:arrow-left', width: '4rem', height: '4rem'})
+					.hero_nav_next
+						+iconify({icon: 'prime:arrow-right', width: '4rem', height: '4rem'})
 				.hero_slider.swiper
 					.swiper-wrapper
 						each slide in heroSlider

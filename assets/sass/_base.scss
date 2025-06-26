@@ -271,7 +271,7 @@ span.u-text-black {
 
 .global-pagination {
 	@include bp($point_2, $direction: min) {
-		display: none;
+		display: none !important;
 	}
 	display: block;
 	position: absolute;

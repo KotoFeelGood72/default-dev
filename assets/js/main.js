@@ -309,6 +309,10 @@ const heroSlider = new Swiper('.hero_slider', {
 		el: '.hero-pagination',
 		clickable: true,
 	},
+	navigation: {
+		nextEl: '.hero_nav_next',
+		prevEl: '.hero_nav_prev',
+	},
 
 });
 
