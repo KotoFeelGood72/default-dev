@@ -1268,6 +1268,20 @@
 	}
 }
 
+.newsCard {
+	h3 {
+		transition: all 0.3s ease-in-out;
+	}
+	&:hover {
+		h3 {
+			color: $blue;
+		}
+		.gl__icon {
+			transform: rotate(45deg);
+		}
+	}
+}
+
 .newsCard__link {
 	width: 6rem;
 	height: 6rem;
@@ -1283,6 +1297,7 @@
 		color: $white;
 		height: 100%;
 		.gl__icon {
+			transition: all 0.3s ease-in-out;
 			@include flex-center;
 			transform: rotate(-45deg);
 		}
